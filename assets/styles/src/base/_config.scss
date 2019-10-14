@@ -20,42 +20,56 @@ $assets-path: "/assets";
 /* COLOUR VARIABLES */
 /*-----------------------------------------------------------------------------------*/
 
+// $color-white:         #fefefe !default;
+// $color-grey-100:      #f8f9fa !default;
+// $color-grey-200:      #e9ecef !default;
+// $color-grey-300:      #dee2e6 !default;
+// $color-grey-400:      #ced4da !default;
+// $color-grey-500:      #8c8c8c !default;
+// $color-grey-600:      #6c757d !default;
+// $color-grey-700:      #495057 !default;
+// $color-grey-800:      #343a40 !default;
+// $color-grey-900:      #212529 !default;
+
+$color-black:         #202020 !default;
 $color-white:         #fefefe !default;
-$color-grey-100:      #f8f9fa !default;
-$color-grey-200:      #e9ecef !default;
-$color-grey-300:      #dee2e6 !default;
-$color-grey-400:      #ced4da !default;
-$color-grey-500:      #8c8c8c !default;
-$color-grey-600:      #6c757d !default;
-$color-grey-700:      #495057 !default;
-$color-grey-800:      #343a40 !default;
-$color-grey-900:      #212529 !default;
-$color-black:         #1d2426 !default;
-$color-grey:          $color-grey-500 !default;
 
-$color-blue:        #007bff !default;
-$color-indigo:      #6610f2 !default;
-$color-purple:      #6f42c1 !default;
-$color-pink:        #e83e8c !default;
-$color-red:         #dc3545 !default;
-$color-orange:      #fd7e14 !default;
-$color-yellow:      #ffc107 !default;
-$color-green:       #28a745 !default;
-$color-teal:        #20c997 !default;
-$color-cyan:        #17a2b8 !default;
+$color-grey-100:      lighten($color-black, 90%) !default;
+$color-grey-200:      lighten($color-black, 80%) !default;
+$color-grey-300:      lighten($color-black, 70%) !default;
+$color-grey-400:      lighten($color-black, 60%) !default;
+$color-grey-500:      lighten($color-black, 50%) !default;
+$color-grey-600:      lighten($color-black, 40%) !default;
+$color-grey-700:      lighten($color-black, 30%) !default;
+$color-grey-800:      lighten($color-black, 20%) !default;
+$color-grey-900:      lighten($color-black, 10%) !default;
 
-$color-governor:    #3834b5 !default;
-$color-aquamarine:  #64ffda !default;
-$color-rose:        #ff1971  !default;
-$color-zodiac:      #0b1d38 !default;
+$color-grey:          $color-grey-800 !default;
 
-$color-primary:       $color-blue !default;
+$color-blue:          #007bff !default;
+$color-indigo:        #6610f2 !default;
+$color-purple:        #6f42c1 !default;
+$color-pink:          #e83e8c !default;
+$color-red:           #dc3545 !default;
+$color-orange:        #fd7e14 !default;
+$color-yellow:        #ffc107 !default;
+$color-green:         #28a745 !default;
+$color-teal:          #20c997 !default;
+$color-cyan:          #17a2b8 !default;
+
+// $color-governor:    #3834b5 !default;
+// $color-aquamarine:  #64ffda !default;
+// $color-rose:        #ff1971  !default;
+// $color-zodiac:      #0b1d38 !default;
+$color-fabriah:       #56366b !default;
+
+$color-primary:       $color-fabriah !default;
 $color-secondary:     $color-grey !default;
 // $color-gamma:         $color-rose !default;
 // $color-delta:         $color-zodiac !default;
 $color-success:       $color-green !default;
 $color-info:          $color-blue !default;
-$color-progress:      $color-orange !default;
+$color-pending:      $color-orange !default;
 $color-warning:       $color-yellow !default;
 $color-danger:        $color-red !default;
 
@@ -105,7 +119,7 @@ $colors: map-merge(
     // "gamma":          $color-gamma,
     // "delta":          $color-delta,
     "success":        $color-success,
-    "progress":       $color-progress,
+    "pending":        $color-pending,
     "info":           $color-info,
     "warning":        $color-warning,
     "danger":         $color-danger
@@ -454,6 +468,17 @@ $table-striped-color:     $color-grey-400 !default;
 
 
 /*-----------------------------------------------------------------------------------*/
+/* CARD VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$card-background-color:   $color-white !default;
+$card-border-color:       $color-grey-300 !default;
+$card-border-radius:      $border-radius !default;
+$card-border-width:       0.1rem !default;
+$card-padding:            1.5rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
 /* FORM VARIABLES */
 /*-----------------------------------------------------------------------------------*/
 
@@ -495,7 +520,7 @@ $button-padding-lg:         1.1rem 1.9rem !default;
 
 $badge-padding: 0.5rem 0.6rem!default;
 $badge-font-size: $body-small !default;
-$badge-font-weight: $weight-semibold !default;
+$badge-font-weight: $weight-bold !default;
 $badge-border-radius: $border-radius !default;
 $badge-pill-padding-x: .8rem !default;
 $badge-pill-border-radius: 10rem !default;

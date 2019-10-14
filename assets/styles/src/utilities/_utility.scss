@@ -624,287 +624,250 @@ $border-sizes: map-merge(
   @include no-scrollbars;
 }
 
+$caret-width: 0.5rem;
+
+@mixin caret-down {
+  border-top: $caret-width solid;
+  border-right: $caret-width solid transparent;
+  border-bottom: 0;
+  border-left: $caret-width solid transparent;
+}
+
+@mixin caret-up {
+  border-top: 0;
+  border-right: $caret-width solid transparent;
+  border-bottom: $caret-width solid;
+  border-left: $caret-width solid transparent;
+}
+
+@mixin caret-right {
+  border-top: $caret-width solid transparent;
+  border-right: 0;
+  border-bottom: $caret-width solid transparent;
+  border-left: $caret-width solid;
+}
+
+@mixin caret-left {
+  border-top: $caret-width solid transparent;
+  border-right: $caret-width solid;
+  border-bottom: $caret-width solid transparent;
+}
+
+@mixin caret($direction: down) {
+    &::after {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: $caret-width * .85;
+      // vertical-align: $caret-width * .85;
+      vertical-align: middle;
+      content: "";
+      @if $direction == down {
+        @include caret-down;
+      } @else if $direction == up {
+        @include caret-up;
+      } @else if $direction == right {
+        @include caret-right;
+      }
+    }
+
+    @if $direction == left {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: $caret-width * .85;
+        vertical-align: $caret-width * .85;
+        content: "";
+        @include caret-left;
+      }
+    }
+
+    &:empty::after {
+      margin-left: 0;
+    }
+  
+}
+
 
 /*-----------------------------------------------------------------------------------*/
-/* BODY ANIMATION */
+/* DROPDOWN */
 /*-----------------------------------------------------------------------------------*/
 
-// body {
-//   @include animation (fadeIn 1.5s ease);
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropright,
+.dropdown,
+.dropleft {
+  position: relative;
+}
+
+.dropdown-toggle {
+  // Generate the caret automatically
+  @include caret;
+}
+
+// The dropdown menu
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $z-index-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0; // override default ul
+  font-size: $body-font-size; // Redeclare because nesting can cause inheritance issues
+  color: $color-black;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  list-style: none;
+  background-color: $color-white;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  @include border-radius(.25rem);
+  // @include box-shadow($dropdown-box-shadow);
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+// .dropup {
+//   .dropdown-menu {
+//     top: auto;
+//     bottom: 100%;
+//     margin-top: 0;
+//     margin-bottom: $dropdown-spacer;
+//   }
+
+//   .dropdown-toggle {
+//     @include caret(up);
+//   }
 // }
 
+// .dropright {
+//   .dropdown-menu {
+//     top: 0;
+//     right: auto;
+//     left: 100%;
+//     margin-top: 0;
+//     margin-left: $dropdown-spacer;
+//   }
 
-/*-----------------------------------------------------------------------------------*/
-/* SEPARATOR */
-/*-----------------------------------------------------------------------------------*/
-
-// $separator-size: 0.5rem;
-// $separator-border-style: solid;
-// $separator-border-color: $color-secondary;
-
-// .separator {
-//   border: 0;
+//   .dropdown-toggle {
+//     @include caret(right);
+//     &::after {
+//       vertical-align: 0;
+//     }
+//   }
 // }
 
-// .separator--line {
-//   border: 0;
-//   border-bottom: $separator-size $separator-border-style;
-//   width: 0;
+// .dropleft {
+//   .dropdown-menu {
+//     top: 0;
+//     right: 100%;
+//     left: auto;
+//     margin-top: 0;
+//     margin-right: $dropdown-spacer;
+//   }
+
+//   .dropdown-toggle {
+//     @include caret(left);
+//     &::before {
+//       vertical-align: 0;
+//     }
+//   }
 // }
 
-// @mixin dot {
-//   $dot-size: 0.6rem;
-//   content: "";
+// When enabled Popper.js, reset basic dropdown position
+// stylelint-disable no-duplicate-selectors
+.dropdown-menu {
+  &[x-placement^="top"],
+  &[x-placement^="right"],
+  &[x-placement^="bottom"],
+  &[x-placement^="left"] {
+    right: auto;
+    bottom: auto;
+  }
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: .5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: .25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+
+  @include hover-focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+
+  &.active,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #007bff;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: #6c757d;
+    background-color: transparent;
+  }
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown.open {
+
+  .dropdown-toggle {
+    @include caret(up);
+  }
+  
+  .dropdown-menu {
+    display: block;
+  }
+
+}
+
+// // Dropdown section headers
+// .dropdown-header {
 //   display: block;
-//   height: $dot-size;
-//   width: $dot-size;
-//   border-radius: 50%;
+//   padding: $dropdown-padding-y $dropdown-item-padding-x;
+//   margin-bottom: 0; // for use with heading elements
+//   font-size: $font-size-sm;
+//   color: $dropdown-header-color;
+//   white-space: nowrap; // as with > li > a
 // }
 
-// .separator--dots {
-//   overflow: visible;
-//   border: 0;
-//   @include dot();
-//   position: relative;
-
-//   &:before {
-//     @include dot();
-//     position: absolute;
-//     left: -2.3rem;
-//   }
-
-//   &:after {
-//     @include dot();
-//     position: absolute;
-//     left: 2.3rem;
-//   }
-
-// }
-
-// @mixin dash {
-//   content: "";
+// // Dropdown text
+// .dropdown-item-text {
 //   display: block;
-//   height: 0.2rem;
-//   width: 2rem;
-// }
-
-// .separator--dash {
-//   @include dash();
-//   overflow: visible;
-//   border: 0;
-//   position: relative;
-
-//   &:before {
-//     @include dash();
-//     position: absolute;
-//     left: -2.7rem;
-//   }
-
-//   &:after {
-//     @include dash();
-//     position: absolute;
-//     left: 2.7rem;
-//   }
-
-// }
-
-// .separator--primary {
-
-//   &.separator--line {
-//     border-color: $color-primary;
-//   }
-
-//   &.separator--dots {
-//     background: $color-primary;
-
-//     &:before {
-//       background: $color-primary;
-//     }
-  
-//     &:after {
-//       background: $color-primary;
-//     }
-
-//   }
-
-//   &.separator--dash {
-//     background: $color-primary;
-
-//     &:before {
-//       background: $color-primary;
-//     }
-  
-//     &:after {
-//       background: $color-primary;
-//     }
-
-//   }
-
-// }
-
-// .separator--secondary {
-
-//   &.separator--line {
-//     border-color: $color-secondary;
-//   }
-
-//   &.separator--dots {
-//     background: $color-secondary;
-
-//     &:before {
-//       background: $color-secondary;
-//     }
-  
-//     &:after {
-//       background: $color-secondary;
-//     }
-
-//   }
-
-//   &.separator--dash {
-//     background: $color-secondary;
-
-//     &:before {
-//       background: $color-secondary;
-//     }
-  
-//     &:after {
-//       background: $color-secondary;
-//     }
-
-//   }
-
-// }
-
-// .separator--gamma {
-
-//   &.separator--line {
-//     border-color: $color-gamma;
-//   }
-
-//   &.separator--dots {
-//     background: $color-gamma;
-
-//     &:before {
-//       background: $color-gamma;
-//     }
-  
-//     &:after {
-//       background: $color-gamma;
-//     }
-
-//   }
-
-//   &.separator--dash {
-//     background: $color-gamma;
-
-//     &:before {
-//       background: $color-gamma;
-//     }
-  
-//     &:after {
-//       background: $color-gamma;
-//     }
-
-//   }
-
-// }
-
-// .separator--delta {
-
-//   &.separator--line {
-//     border-color: $color-delta;
-//   }
-
-//   &.separator--dots {
-//     background: $color-delta;
-
-//     &:before {
-//       background: $color-delta;
-//     }
-  
-//     &:after {
-//       background: $color-delta;
-//     }
-
-//   }
-
-//   &.separator--dash {
-//     background: $color-delta;
-
-//     &:before {
-//       background: $color-delta;
-//     }
-  
-//     &:after {
-//       background: $color-delta;
-//     }
-
-//   }
-
-// }
-
-// .separator--multi {
-
-//   &.separator--dots {
-//     background: $color-secondary;
-
-//     &:before {
-//       background: $color-primary;
-//     }
-  
-//     &:after {
-//       background: $color-gamma;
-//     }
-
-//   }
-
-//   &.separator--dash {
-//     background: $color-secondary;
-
-//     &:before {
-//       background: $color-primary;
-//     }
-  
-//     &:after {
-//       background: $color-gamma;
-//     }
-
-//   }
-
-// }
-
-
-/*-----------------------------------------------------------------------------------*/
-/* ICON */
-/*-----------------------------------------------------------------------------------*/
-
-// @mixin icon {
-//   display: inline-block;
-//   height: 4.5rem;
-//   width: 4.5rem;
-//   line-height: 4.2rem;
-//   font-size: 2.2rem;
-//   text-indent: 0.1rem;
-//   border-width: 0.2rem;
-//   border-style: solid;
-//   @include border-radius (50%); 
-// }
-
-// .icon {
-//   @include icon;
-
-//   &--lg {
-//     height: 6.5rem;
-//     width: 6.5rem;
-//     line-height: 5.5rem;
-//     font-size: 3rem;
-//   }
-
-//   &--primary {
-//     color: $color-primary;
-//     background: lighten($color-primary, 40%);
-//     border-color: $color-primary;
-//   }
-
+//   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+//   color: $dropdown-link-color;
 // }

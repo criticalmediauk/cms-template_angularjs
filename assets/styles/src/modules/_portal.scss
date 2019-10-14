@@ -1,4 +1,4 @@
-$portal-aside-width: 22rem;
+// $portal-aside-width: 22rem;
 
 .wrapper {
   position: relative;
@@ -8,16 +8,17 @@ $portal-aside-width: 22rem;
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: $portal-aside-width;
-  height: 100%;
-  z-index: $z-index-fixed;
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // left: 0;
+  // width: $portal-aside-width;
+  // height: 100%;
+  width: 100%;
+  // z-index: $z-index-fixed;
 }
 
 .view {
-  margin-left: $portal-aside-width;
+  // margin-left: $portal-aside-width;
   overflow: hidden;
 }

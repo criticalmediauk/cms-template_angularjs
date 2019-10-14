@@ -64,13 +64,13 @@
 }
 
 
-.fade:not(.show) {
-  opacity: 0;
-}
+// .fade:not(.show) {
+//   opacity: 0;
+// }
 
-.fade {
-  @include transition(opacity .15s linear);
-}
+// .fade {
+//   @include transition(opacity .15s linear);
+// }
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -84,15 +84,15 @@
   bottom: 0;
   left: 0;
   z-index: $z-index-modal-backdrop;
-  background-color: $color-grey;
+  background: rgba($color-grey, 0.8);
 }
 
 .modal-backdrop.fade {
   opacity: 0;
 }
 
-.modal-backdrop.show {
-  opacity: 0.8;
+.modal-backdrop.in {
+  opacity: 1;
 }
 
 
@@ -111,7 +111,7 @@
   height: 100%;
   color: $color-grey;
   text-transform: uppercase;
-  font-weight: $weight-extrabold;
+  font-weight: $weight-bold;
   @include transition ($transition-base-lg);
 
   @include hover-focus {

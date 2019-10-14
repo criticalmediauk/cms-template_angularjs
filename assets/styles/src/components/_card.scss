@@ -6,19 +6,18 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: $card-background-color;
   background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  border: $card-border-width solid $card-border-color;
+  border-radius: $card-border-radius;
 
   &-header {
-    padding: 1.5rem;
+    padding: $card-padding;
     margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-bottom: $card-border-width solid $card-border-color;
 
     &:first-child {
-      border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+      // border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     }
 
   }
@@ -26,22 +25,26 @@
   &-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem;
+    padding: $card-padding;
   }
 
   &-footer {
-    padding: .75rem 1.25rem;
-    background-color: rgba(0,0,0,.03);
-    border-top: 1px solid rgba(0,0,0,.125);
+    padding: $card-padding;
+    border-top: $card-border-width solid $card-border-color;
 
-    &:last-child {
-      border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
-    }
+    // &:last-child {
+    //   border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    // }
 
   }
 
   .table {
     margin-bottom: 0;
+
+    thead tr {
+      border-top: 0;
+    }
+
   }
 
 }

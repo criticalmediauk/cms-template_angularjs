@@ -1,4 +1,4 @@
-var app = angular.module('app',['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module('app',['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ui.select', 'ngSanitize']);
 
 /*-----------------------------------------------------------------------------------*/
 /* CONFIGURE ROUTES */
@@ -9,12 +9,12 @@ app.config(function($routeProvider, $locationProvider) {
   $routeProvider
 
   .when('/', {
-    templateUrl: 'views/login.html',
-    controller: 'loginCtrl',
-  })
-  .when('/dashboard', {
     templateUrl: 'views/dashboard.html',
     controller: 'dashCtrl',
+  })
+  .when('/login', {
+    templateUrl: 'views/login.html',
+    controller: 'loginCtrl',
   })
   .otherwise({
     templateUrl: 'views/404.html',
@@ -56,3 +56,27 @@ app.controller('dashCtrl', function($scope) {
   $scope.parent.addClass = 'dashboard';
   $scope.title = 'Dashboard';
 });
+
+
+app.controller('ordersCtrl', function($scope, $uibModal) {
+
+  $scope.newOrderModal  = function(){
+    $uibModal.open({
+      templateUrl : '/modals/new-order-modal.html',
+      controller  : 'newOrderCtrl'
+    });
+  }
+  
+});
+
+app.controller('newOrderCtrl', function ($scope, $uibModalInstance ){
+  
+  $scope.ok = function(){ 
+    $uibModalInstance.close()
+  }
+  
+  $scope.cancel = function(){  
+    $uibModalInstance.close()
+  }
+
+})

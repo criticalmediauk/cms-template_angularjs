@@ -4,26 +4,42 @@
 
 <article class="col-12">
 
-  <div class="card">
+  <div class="card" ng-controller="ordersCtrl">
 
     <div class="card-header">
       <div class="row align-items-center">
 
         <div class="col-auto">
 
-          <form>
-            <div class="form-group row align-items-baseline m-0">
-              <label for="staticEmail2" class="col-sm-4">Sort</label>
-              <div class="col">
-                <select class="form-control" style="width: 100%">
-                  <option label="Customer A-Z" value="1">Customer A-Z</option>
-                  <option label="Customer Z-A" value="2">Customer Z-A</option>
-                  <option label="Oldest" value="5" selected="selected">Oldest</option>
-                  <option label="Most Recent" value="6">Most Recent</option>
-                </select>
-              </div>
+          <select class="form-control" name="bulkSelect" ng-model="data.bulkSelect">
+            <option value="paid">Paid</option>
+            <option value="canceled">Canceled</option>
+            <option value="archive">Archive</option>
+            <option value="delete">Delete</option>
+          </select>
+
+          <ui-select ng-model="ctrl.person.selected" theme="bootstrap" search-enabled="ctrl.searchEnabled" ng-disabled="ctrl.disabled" style="min-width: 300px;" title="Choose a person">
+            <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices repeat="person in ctrl.people | propsFilter: {name: $select.search, age: $select.search}">
+              <div ng-bind-html="person.name | highlight: $select.search"></div>
+              <small>
+                email: {{person.email}}
+                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+              </small>
+            </ui-select-choices>
+          </ui-select>
+
+          <!-- <div class="btn-group" uib-dropdown is-open="status.isopen" >
+            <button id="bulkAction" type="button" class="btn btn-secondary" uib-dropdown-toggle >
+              Bulk action <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="bulkAction">
+              <a href="#" class="dropdown-item">Paid</a>
+              <a href="#" class="dropdown-item">Canceled</a>
+              <a href="#" class="dropdown-item">Archive</a>
+              <a href="#" class="dropdown-item">Delete</a>
             </div>
-          </form>
+          </div> -->
 
         </div>
 
@@ -41,7 +57,7 @@
         </div>
 
         <div class="col-auto text-right">
-          <button class="btn btn-secondary" type="button">Add new domain</button>
+          <button class="btn btn-primary" type="button">Add new order</button>
         </div>
 
       </div> 
@@ -50,47 +66,28 @@
     <div class="card-body p-0">
 
       <div class="table-responsive-md">
-        <table class="table table-striped" >
+        <table class="table" >
           <thead>
             <tr>
-              <th>Domain</th>
+              <th>&nbsp;</th>
+              <th>Created</th>
+              <th>Order ID</th>
               <th>Status</th>
-              <th>Language</th>
-              <th>Script Tag</th>
+              <th>Customer</th>
+              <th>Total</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td data-title="Domain">critical.media</td>
-              <td data-title="Status"><span class="badge badge-info">Scheduled</span></td>
-              <td data-title="Language">English (UK)</td>
-              <td data-title="Script Tag">&nbsp;</td>
-              <td data-title="" class="text-right"><button class="btn btn-primary" type="button">Manage</button></td>
-            </tr>
-            <tr>
-              <td data-title="Domain">gardentags.com</td>
-              <td data-title="Status"><span class="badge badge-progress">In progress</span></td>
-              <td data-title="Language">English (US)</td>
-              <td data-title="Script Tag">&nbsp;</td>
-              <td data-title="" class="text-right"><button class="btn btn-primary" type="button">Manage</button></td>
-            </tr>
-            <tr>
-              <td data-title="Domain">critical.media.co.uk</td>
-              <td data-title="Status"><span class="badge badge-danger">Failed</span></td>
-              <td data-title="Language">French</td>
-              <td data-title="Script Tag">&nbsp;</td>
-              <td data-title="" class="text-right"><button class="btn btn-primary" type="button">Manage</button></td>
-            </tr>
-            <tr>
-              <td data-title="Domain">critical.media.com</td>
-              <td data-title="Status"><span class="badge badge-success">Complete</span></td>
-              <td data-title="Language">English (UK)</td>
-              <td data-title="Script Tag">
-                <button class="btn btn-primary btn-sm d-inline-block" type="button">Copy</button>
-              </td>
-              <td data-title="" class="text-right">
-                <button class="btn btn-primary" type="button">Manage</button>
+              <td data-title=""><input type="checkbox" name="bulkSelect" id="bulkSelect" value="true"></td>
+              <td data-title="Created">10/10/2019 13:40</td>
+              <td data-title="Order Id">201</td>
+              <td data-title="Status"><span class="badge badge-pending">Pending</span></td>
+              <td data-title="Customer">Joe Bloggs</td>
+              <td data-title="Customer">£52.80</td>
+              <td data-title="" class="text-md-right">
+                <button class="btn btn-primary" type="button" ng-click = "newOrderModal()">Manage</button>
               </td>
             </tr>
           </tbody>
@@ -98,5 +95,21 @@
       </div>
     </div>
     
+    <div class="card-footer">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+        </div>
+        <div class="col-auto text-right">
+          <select class="form-control" name="resultSelect" ng-model="data.resultSelect">
+            <option value="all">All</option>
+            <option selected value="20">20</option>
+            <option value="50">50</option>
+            <option value="80">80</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
   </div>
 </article>
