@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-light.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-light.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-light.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-light.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-light.svg#overpass-light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-light-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-light-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-light-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-light-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-light-italic.svg#overpass-light-italic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-regular.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-regular.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-regular.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-regular.svg#overpass-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-italic.svg#overpass-italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-semibold.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-semibold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold.svg#overpass-semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-semibold-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-semibold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-semibold-italic.svg#overpass-semibold-italic') format('svg');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-bold.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold.svg#opensans-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-bold-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-bold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-bold-italic.svg#overpass-bold-italic') format('svg');
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-heavy.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-heavy.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy.svg#overpass-heavy') format('svg');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-heavy-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-heavy-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-heavy-italic.svg#overpass-heavy-italic') format('svg');
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-extrabold.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-extrabold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold.svg#overpass-extrabold') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url('#{$assets-path}/fonts/overpass/overpass-extrabold-italic.eot');
+  src: url('#{$assets-path}/fonts/overpass/overpass-extrabold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/overpass/overpass-extrabold-italic.svg#overpass-extrabold-italic') format('svg');
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+

@@ -1,0 +1,64 @@
+<main class="py-5 py-md-10" id="mainContent">
+  <div class="container">
+    <div class="row justify-content-center">
+      <article class="dialog col-md-9 col-lg-7 col-xl-6 col-xxl-5" role="dialog">
+
+        <header class="dialog__header">
+          <h3 class="display-3 text-white">Welcome back</h3>
+          <p class="mt-0 mb-0 text-grey-500">Please sign in to your account.</p>
+        </header>
+
+        <div class="dialog__body">
+          <form class="login-form" id="login" name="login" role="form" action="/desktop" method="post" novalidate>
+            <div class="form-group">
+              <label for="email">Username or email address <span class="text-danger">*<span></label>
+              <input  
+                type="text" 
+                name="user" 
+                id="user" 
+                class="form-control"
+                placeholder="john@email.com" 
+                required
+                autofocus
+                tabindex="1"
+                data-rule-required="true" 
+                data-msg-required="Please enter your username or email address" 
+              />
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-6">
+                  <label for="password">Password <span class="text-danger">*<span></label>
+                </div>
+                <div class="col-6 text-right">
+                  <button type="button" id="togglePassword" data-toggle="#password" class="small text-grey-700 text-underline px-0" tabindex="3">Show</button>
+                </div>
+              </div>
+                <input 
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required
+                  tabindex="2"
+                  aria-label="login password"
+                  aria-describedby="password"
+                  data-rule-required="true" 
+                  data-rule-minlength="5" 
+                  data-msg-required="Please enter your password" 
+                  data-msg-minlength="Password is too short" 
+                />
+              <div class="form-text"><a href="" tabindex="5">Forgot your password?</a></div>
+            </div>
+            <div class="small mt-5 mt-md-6 mb-6 mb-md-8 text-grey-600"><span class="text-danger">*</span> Required fields</div>
+            <div class="form-group text-center mb-0">
+              <button type="submit" class="btn btn-primary text-center d-block w-100" tabindex="4">Sign In</button>
+            </div>
+          </form>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</main>

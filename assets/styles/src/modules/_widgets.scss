@@ -1,0 +1,154 @@
+
+.widget {
+
+  ul {
+    @include list-unstyled;
+    margin: 0;
+
+    li {
+      padding-bottom: 1.3rem;
+      margin-bottom: 1.3rem;
+      border-bottom: 0.1rem dotted $color-grey;
+
+      a {
+        display: block;
+      }
+
+    }
+
+  }
+
+  &-title {
+    margin: 0;
+    font-size: 2.5rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3.2rem;
+    }
+
+  }
+
+  &_categories {
+
+    ul {
+
+      li {
+
+        a {
+          position: relative;
+          padding-left: 2rem;
+          color: $color-primary;
+
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            @include transform (translateY(-50%));
+            font-family: $fontawesome;
+            font-weight: $weight-bold;
+            display: inline-block;
+            content: "\f105";
+            font-size: 1.5rem;
+            line-height: 1;
+            color: $color-grey;
+            @include transition-base;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &-recent-posts-img {
+
+    ul {
+
+      li {
+
+        a {
+
+          .wp-post {
+
+            &-image {
+              display: block;
+              margin: 0;
+              width: 7.5rem;
+              height: 7.5rem;
+              max-width: 7.5rem;
+            }
+
+            &-title {
+              display: block;
+              font-size: 1.7rem;
+              line-height: 1.4;
+              margin-top: 0;
+              text-transform: none;
+              color: $color-primary;
+              font-weight: $weight-extrabold;
+              letter-spacing: -.1rem;
+              word-spacing: 0.2rem;
+              @include transition($transition-base-lg);
+            }
+
+            &-date {
+              font-size: 1.2rem;
+              display: block;
+              margin-top: 0.5rem;
+              text-transform: uppercase;
+              font-weight: $weight-bold;
+              color: $color-grey;
+              @include transition($transition-base-lg);
+            }
+
+          }
+
+          @include hover {
+            text-decoration: none;
+
+            .wp-post {
+
+              &-title {
+                color: $color-secondary;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+    
+  }
+
+}
+
+aside {
+
+  .widget {
+    border-top: 0.5rem solid $color-grey;
+    @include make-col-ready;
+    padding: 2.5rem 0;
+    margin-bottom: 4rem;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(10);
+    }
+  }
+
+}
+
+// footer {
+
+//   .widget {
+//     border-top: 0;
+//     padding: 0;
+//     margin: 0;
+//   }
+
+// }

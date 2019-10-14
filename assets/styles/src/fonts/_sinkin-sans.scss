@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light.svg#sinkinsans-light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-light-italic.svg#sinkinsans-light-italic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-regular.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-regular.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-regular.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-regular.svg#sinkinsans-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-italic.svg#sinkinsans-italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium.svg#sinkinsans-medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-medium-italic.svg#sinkinsans-medium-italic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold.svg#sinkinsans-semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-semibold-italic.svg#sinkinsans-semibold-italic') format('svg');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold.svg#opensans-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-bold-italic.svg#sinkinsans-bold-italic') format('svg');
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black.svg#sinkinsans-black') format('svg');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Sinkin Sans';
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black-italic.eot');
+  src: url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/sinkin-sans/sinkinsans-black-italic.svg#sinkinsans-extrabolditalic') format('svg');
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+

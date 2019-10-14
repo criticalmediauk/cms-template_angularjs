@@ -1,0 +1,23 @@
+.modual-identity {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: 0.04;
+    background: url(http://dev.critical.media/base/wp-content/uploads/2019/03/emblem.svg);
+    background-size: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-up(sm) {
+      background-size: 90%;
+    }
+
+  }
+
+}

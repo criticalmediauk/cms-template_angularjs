@@ -1,0 +1,156 @@
+$icon-size: 4.5rem;
+
+@mixin icon {
+  display: inline-block;
+  background-image: none;
+  filter: primary(opacity=100);
+  opacity: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 0;
+  border-color: transparent;
+  text-decoration: none;
+  padding: 0;
+  height: $icon-size;
+  width: $icon-size;
+  line-height: 4.7rem;
+  font-size: 1.7rem;
+  text-align: center;
+  @include border-radius (50%);
+  @include transition-base;
+
+  @include hover {
+    outline: 0;
+    outline-offset: 0;
+    text-decoration: none;
+  }
+
+}
+
+.module-social {
+
+  .list-inline li:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .icon {
+    @include icon;
+    margin-bottom: 1rem;
+
+    &--twitter {
+      color: $color-white;
+      background-color: $color-twitter;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--facebook {
+      color: $color-white;
+      background-color: $color-facebook;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--instagram {
+      color: $color-white;
+      background-color: $color-instagram;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--linkedin {
+      color: $color-white;
+      background-color: $color-linkedin;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--pinterest {
+      color: $color-white;
+      background-color: $color-pinterest;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--youtube {
+      color: $color-white;
+      background-color: $color-youtube;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+    &--rss {
+      color: $color-white;
+      background-color: $color-primary;
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+      @include focus {
+        color: $color-white;
+        background-color: $color-grey;
+      }
+
+    }
+
+  }
+
+}

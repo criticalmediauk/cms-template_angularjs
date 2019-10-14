@@ -1,0 +1,355 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* TIMELINE - STRUCTURE */
+/*-----------------------------------------------------------------------------------*/
+
+.module-timeline {
+
+  ol, ul {
+    list-style: none;
+  }
+
+}
+
+.timeline {
+  opacity: 0;
+  //margin: 2em auto;
+  @include transition (opacity 0.2s);
+
+  &::before {
+    /* never visible - this is used in jQuery to check the current MQ */
+    content: 'mobile';
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      /* never visible - this is used in jQuery to check the current MQ */
+      content: 'desktop';
+    }
+
+  }
+
+  &.loaded {
+    /* show the timeline after events position has been set (using JavaScript) */
+    opacity: 1;
+  }
+
+  .timeline-nav {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 auto 2rem;
+    }
+
+    &__wrapper {
+      position: relative;
+      height: 100%;
+      margin: 0 5.5rem;
+      overflow-x: scroll;
+      overflow-y: -moz-scrollbars-none;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar { 
+        display: none;
+      }
+
+    }
+
+    &__events-list {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 4.9rem;
+      height: 0.2rem;
+      background: $color-grey;
+      @include transition (transform 0.4s ease);
+
+      a {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        text-align: center;
+        width: 4.1rem;
+        font-size: 1.3rem;
+        padding-bottom: 1.5rem;
+        color: $color-grey;
+        /* fix bug on Safari - text flickering while timeline translates */
+        @include transform (translateZ(0));
+        @include transition(all 0.3s ease);
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          right: auto;
+          @include transform (translateX(-50%));
+          bottom: -0.5rem;
+          height: 1.2rem;
+          width: 1.2rem;
+          border-radius: 50%;
+          border: 0.2rem solid $color-grey;
+          background-color: $color-white;
+          @include transition(all 0.3s ease);
+        }
+
+        &.selected {
+          font-size: 1.6rem;
+          font-weight: $weight-extrabold;
+          pointer-events: none;
+          color: $color-primary;
+
+          &::after {
+            background-color: $color-secondary;
+            border-color: $color-secondary;
+          }
+
+        }
+
+        &.older-event {
+
+          &::after {
+            border-color: $color-secondary;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.timeline .timeline-nav__events-line {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $color-secondary;
+  @include transform (scaleX(0));
+  @include transform-origin (left center);
+  @include transform (transform 0.3s ease);
+}
+
+.no-touch .timeline .timeline-nav__events-list a:hover::after {
+  background-color: $color-secondary;
+  border-color: $color-secondary;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EVENTS NAVIGATION */
+/*-----------------------------------------------------------------------------------*/
+
+.timeline-nav__controls {
+
+  a {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    bottom: auto;
+    @include transform (translateY(-50%));
+    height: 3.5rem;
+    width: 3.5rem;
+    background: $color-grey;
+    color: $color-secondary;
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+    @include border-radius (50%);
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    @include transition (all 0.3s ease);
+
+    @include hover {
+      background: $color-secondary;
+      color: $color-grey;
+    }
+
+    &::after {
+      font-family: $fontawesome;
+      font-weight: $weight-bold;
+    }
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+
+    &.inactive {
+      cursor: not-allowed;
+    }
+
+  }
+
+}
+
+.no-touch .timeline-nav__controls a:hover {
+  border-color: $color-secondary;
+}
+
+.no-touch .timeline-nav__controls a.inactive:hover {
+  border-color: #dfdfdf;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EVENTS CONTENT */
+/*-----------------------------------------------------------------------------------*/
+
+.timeline-events {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  @include transition (height 0.4s);
+
+  ol {
+    padding: 0;
+    margin: 0;    
+  }
+
+  li {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    @include transform (translateX(-100%));
+    @include animation-duration (0.4s);
+    @include animation-timing-function (ease-in-out);
+
+    @include media-breakpoint-up(sm) {
+      padding: 0 5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 8rem;
+    }
+
+    &.selected {
+      position: relative;
+      z-index: 2;
+      opacity: 1;
+      @include transform (translateX(0));
+    }
+
+    &.enter-right, 
+    &.leave-right {
+      @include animation-name (enterRight);
+    }
+
+    &.enter-left, 
+    &.leave-left {
+      @include animation-name (enterLeft);
+    }
+
+    &.enter-left, 
+    &.leave-left {
+      @include animation-name (enterLeft);
+    }
+
+    &.enter-left, 
+    &.leave-left {
+      @include animation-name (enterLeft);
+    }
+
+    &.leave-right, 
+    &.leave-left {
+      @include animation-direction (reverse);
+    }
+
+  }
+
+  .event {
+
+    &__title {
+      font-weight: bold;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-top: 0;
+      color: $color-primary;
+      font-weight: $weight-extrabold;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 3.4rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 4rem;
+      }
+
+    }
+
+    &__date {
+      color: $color-secondary;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 2rem;
+      }
+
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: $color-grey;
+      
+      @include media-breakpoint-up(md) {
+        font-size: 1.8rem;
+      }
+
+    }
+
+  }
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EVENTS ANIMATION */
+/*-----------------------------------------------------------------------------------*/
+
+@include keyframes (enterRight) {
+
+  0% {
+    opacity: 0;
+    @include transform (translateX(100%));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform (translateX(0%));
+  }
+
+}
+
+@include keyframes (enterLeft) {
+  
+  0% {
+    opacity: 0;
+    @include transform (translateX(-100%));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform (translateX(0%));
+  }
+
+}
+
+

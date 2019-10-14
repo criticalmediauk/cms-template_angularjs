@@ -1,0 +1,139 @@
+@mixin img-padding {
+  margin-top: $image-margin-top-sm;
+  margin-bottom: $image-margin-bottom-sm;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: $image-margin-top-lg;
+    margin-bottom: $image-margin-bottom-lg;
+  }
+
+}
+
+
+main {
+
+  img {
+    @include img-padding;
+    display: block;
+
+    &.aligncenter {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        width: 100% !important;
+      }
+
+    }
+
+    &.alignleft {
+      float: left;
+      margin-top: 0;
+      margin-bottom: 4rem;
+      margin-right: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        margin-top: 0;
+        margin-right: 0;
+        width: 100% !important;
+      }
+
+    }
+
+    &.alignright {
+      float: right;
+      margin-top: 0;
+      margin-bottom: 4rem;
+      margin-left: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        margin-top: 0;
+        margin-left: 0;
+        width: 100% !important;
+      }
+
+    }
+
+  }
+
+  figure {
+    @include img-padding;
+    display: block;
+
+    &.aligncenter {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        width: 100% !important;
+      }
+
+    }
+
+    &.alignleft {
+      float: left;
+      margin-top: 0;
+      margin-bottom: 4rem;
+      margin-right: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        margin-top: 0;
+        margin-right: 0;
+        width: 100% !important;
+      }
+
+    }
+
+    &.alignright {
+      float: right;
+      margin-top: 0;
+      margin-bottom: 4rem;
+      margin-left: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        float: none;
+        margin-top: 0;
+        margin-left: 0;
+        width: 100% !important;
+      }
+
+    }
+
+    img {
+      margin: 0;
+      width: 100%;
+    }
+
+    figcaption {
+      background: $color-primary;
+      color: $color-white;
+      padding: 1.5rem 2.5rem;
+      font-size: 1.6rem;
+      @include border-radius (0 0 0.8rem 0.8rem);
+    }
+
+  }
+
+  .wp-block-image {
+    @include img-padding;
+
+    img {
+      margin: 0;
+    }
+
+    figcaption {
+      background: $color-primary;
+      color: $color-white;
+      padding: 1.5rem 2.5rem;
+      font-size: 1.6rem;
+      @include border-radius (0 0 0.8rem 0.8rem);
+    }
+
+  }
+
+}

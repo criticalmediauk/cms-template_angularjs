@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-regular.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-regular.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-regular.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-regular.svg#lato-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-italic.svg#lato-italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-medium.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-medium.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-medium.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-medium.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-medium.svg#lato-regular') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-medium-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-medium-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-medium-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-medium-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-medium-italic.svg#lato-medium-italic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-semibold.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-semibold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-semibold.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-semibold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-semibold.svg#lato-semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-semibold-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-semibold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-semibold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-semibold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-semibold-italic.svg#lato-semibold-italic') format('svg');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-bold.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-bold.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-bold.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-bold.svg#lato-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-bold-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-bold-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-bold-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-bold-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-bold-italic.svg#lato-bold-italic') format('svg');
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-heavy.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-heavy.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-heavy.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-heavy.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-heavy.svg#lato-heavy') format('svg');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-heavy-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-heavy-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-heavy-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-heavy-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-heavy-italic.svg#lato-heavy-italic') format('svg');
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-black.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-black.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-black.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-black.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-black.svg#lato-black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('#{$assets-path}/fonts/lato/lato-black-italic.eot');
+  src: url('#{$assets-path}/fonts/lato/lato-black-italic.eot?#iefix') format('embedded-opentype'),
+       url('#{$assets-path}/fonts/lato/lato-black-italic.woff') format('woff'),
+       url('#{$assets-path}/fonts/lato/lato-black-italic.ttf') format('truetype'),
+       url('#{$assets-path}/fonts/lato/lato-black-italic.svg#lato-black-italic') format('svg');
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2074;
+}
+

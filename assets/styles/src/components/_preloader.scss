@@ -1,0 +1,175 @@
+@mixin preloader-base {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5000;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: $color-primary;
+
+  .bounce {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform (translate(-50%, -50%));
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      @include border-radius (50%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include animation (bounce-animation 2.0s infinite ease-in-out);
+    }
+
+    &::before {
+      opacity: 0.8;
+      background: $color-primary-light;
+    }
+
+    &::after {
+      opacity: 0.8;
+      background: $color-secondary;
+      @include animation-delay (-1.0s);
+    }
+
+  }
+
+  .loader {
+    overflow: hidden;
+    background: $color-grey-400;
+    display: block;
+    height: 0.2rem;
+    width: 20rem;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform (translate(-50%, -50%));
+
+    @include media-breakpoint-up(lg) {
+      width: 40rem;
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      left: -10rem;
+      width: 10rem;
+      height: 0.2rem;
+      background-color: $color-secondary;
+      @include animation (loading-animation 2s infinite ease-in-out);
+    }
+
+  }
+
+  .spinner {
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    	position: absolute;
+    	margin: auto;
+    	left: 0;
+    	top: 0;
+    	bottom: 0;
+    	right: 0;
+    	width: 11px;
+    	height: 11px;
+    	border-radius: 100%;
+    	box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+  		-o-box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+  		-ms-box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+  		-webkit-box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+  		-moz-box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+      @include animation('preloader__spin ease infinite 4s');
+    }
+
+  }
+
+}
+
+.preloader {
+
+  &__in {
+    @include preloader-base;
+  }
+
+  &__out {
+    @include preloader-base;
+    display: none;
+  }
+
+}
+
+@include keyframes(spin-animation) {
+
+  0%,100% {
+		box-shadow: 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223);
+	}
+
+	25% {
+		box-shadow: -11px 11px rgb(223,223,223), -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223), 11px 11px rgb(79,77,73);
+	}
+
+	50% {
+		box-shadow: -11px -11px rgb(79,77,73), 11px -11px rgb(223,223,223), 11px 11px rgb(79,77,73), -11px 11px rgb(223,223,223);
+	}
+
+	75% {
+		box-shadow: 11px -11px #dfdfdf, 11px 11px #4f4d49, -11px 11px #dfdfdf, -11px -11px #4f4d49;
+	}
+
+}
+
+@include keyframes (bounce-animation) {
+
+  0%, 100% { 
+    @include transform (scale(0.0));
+  } 
+
+  50% { 
+    @include transform (scale(1.0));
+  }
+
+}
+
+@include keyframes (loading-animation) {
+
+  0% {
+    left: -10rem;
+    width: 30%;
+  }
+
+  50% {
+    width: 30%;
+  }
+
+  70% {
+    width: 70%;
+  }
+
+  80% { 
+    left: 50%;
+  }
+
+  95% {
+    left: 120%;
+  }
+
+  100% {
+    left: 100%;
+  }
+  
+}
+

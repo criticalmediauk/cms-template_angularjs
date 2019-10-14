@@ -1,0 +1,29 @@
+.shape-oval {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  @include transform (translateX(-50%));
+  width: 105rem;
+  height: 9rem;
+  fill: $color-primary;
+  // background: $color-black;
+  z-index: 0;
+
+  @include media-breakpoint-up(sm) {
+    height: 10rem;
+    width: 115rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 150rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 180rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 200rem;
+  }
+
+}

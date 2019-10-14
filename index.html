@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <meta name="description" content=""> 
+    <meta name="author" content="critical media">
+    <meta name="publisher" content="critical media">
+    <meta name="copyright" content="critical media">
+    <meta name="Content-Language" content="en">  
+    <meta property="og:title" content="<?php echo $title; ?>" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="" />
+    <meta name="theme-color" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <link href="./assets/styles/dist/screen.css" rel="stylesheet" type="text/css">
+    <base href="/">
+  </head>
+  <body ng-app="app" ng-controller="mainCtrl" ng-class="parent.addClass">
+
+    <!--[if lte IE 9]> <p class="browserupgrade">You are using an outdated browser. Please <a href="https://browsehappy.com/"> update your browser </a> for more security and a better experience.</p> <![endif]-->
+    
+    <div class="wrapper">
+  
+      <header class="header p-6 bg-grey-900" role="banner">
+        
+        <div class="container-fluid p-0 h-100">
+
+          <div class="row align-content-between h-100">
+
+            <div class="col-12 line-height-1">
+              <a href="/desktop" class="logo bg-white d-block" title="Back to the home page">
+                <img class="logo-img" src="" role="img" alt="" width="150" height="100">
+              </a>
+            </div>
+
+            <div class="col-12">
+              <a href="/" class="text-white">Sign Out</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <aside class="aside text-right p-4 bg-grey-300"><a href="/">Sign Out</a></aside>
+
+      <main class="view p-6">
+        <div class="container-fluid p-0">
+          <div class="row no-gutters" ng-view ></div>
+        </div>
+      </main>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="./assets/scripts/src/app.js"></script>
+
+  </body>
+</html>

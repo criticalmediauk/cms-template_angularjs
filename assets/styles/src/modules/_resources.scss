@@ -1,0 +1,108 @@
+.module-resources {
+
+  .resource {
+    position: relative;
+    top: 0;
+    overflow: hidden;
+    background: $color-white;
+    @include transition($transition-base-lg);
+    padding: 2rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 3.5rem;
+    }
+
+    &-category {
+
+      &__header {
+        font-size: 2.8rem;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 3.8rem;
+        }
+
+      }
+
+    }
+
+    &__title {
+      margin-top: 0;
+      font-size: 2.5rem;
+      line-height: 1.6;
+      font-weight: $weight-extrabold;
+      @include transition($transition-base-lg);
+
+      @include media-breakpoint-up(lg) {
+        font-size: 3rem;
+      }
+
+    }
+
+    &__text {
+      margin: 0;
+      color: $color-grey;
+      @include transition($transition-base-lg);
+    }
+
+    &__btn {
+      display: inline-block;
+      font-size: $button-font-size-sm;
+      line-height: 1.5;
+      font-family: $button-font;
+      font-weight: $button-font-weight;
+      color: $color-grey;
+      vertical-align: middle;
+      text-decoration: none;
+      //text-transform: uppercase;
+      padding: 1.8rem 3.5rem;
+      border-radius: 5rem;
+      color: $color-grey;
+      background: $color-grey;
+      border-color: $color-grey;
+      @include transition-base;
+
+      @include media-breakpoint-down(sm) {
+        margin: 2.5rem 0 0;
+      }
+
+      @include media-breakpoint-up(sm) {
+        font-size: $button-font-size-lg;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: 1.2rem;
+        background-image: url('#{$assets-path}/img/download-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+    }
+
+    @include hover {
+      color: $color-grey;
+      background: $color-secondary;
+      text-decoration: none;
+      top: -0.5rem;
+
+      .resource {
+
+        &__title {
+           color: $color-grey;
+        }
+
+        &__text {
+           color: $color-grey;
+        }
+
+      }
+
+    }
+
+  }
+
+}

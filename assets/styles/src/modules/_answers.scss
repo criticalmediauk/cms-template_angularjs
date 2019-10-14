@@ -1,0 +1,208 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* SOLUTIONS - SINGLE SOLUTIONS ANSWERS SECTIONS */
+/*-----------------------------------------------------------------------------------*/
+
+.module-answers {
+
+  .answer-nav {
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      display: block;
+
+      @include media-breakpoint-up(lg) {
+        flex-basis: 0;
+        flex-grow: 1;
+        display: block;
+        //display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      position: relative;
+      color: $color-grey;
+      background-color: $color-grey;
+      padding: 1.5rem 5rem 1.5rem 2rem;
+      text-align: left;
+      //text-transform: uppercase;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      font-weight: $weight-semibold;
+      @include transition-base;
+
+      &:not(:last-child) {
+        border-bottom: 0.1rem solid $color-grey;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 2rem 5rem 2rem 3rem;
+        font-size: 1.5rem;
+
+        &:not(:last-child) {
+          border-bottom: 0;
+          border-right: 0.1rem solid $color-grey;
+        }
+
+      }
+
+      .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        font-size: 1.1rem;
+        line-height: 1;
+        color: $color-grey;
+        height: 100%;
+        width: 5rem;
+        text-align: center;
+        @include transition-base;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 1.3rem;
+          width: 7rem;
+        }
+
+        i {
+          position: relative;
+          top: 50%;
+          @include transform (translateY(-50%));
+
+          &::after {
+            content: '\f067';
+          }
+
+        }
+
+      }
+
+      &.active {
+        color: $color-grey;
+        background-color: $color-grey;
+
+        .icon {
+
+          i {
+
+            &::after {
+              content: '\f078';
+            }
+
+          }
+
+        }
+
+      }
+
+      @include hover {
+        text-decoration: none;
+
+        &.active {
+          cursor: not-allowed;
+        }
+
+        @include media-breakpoint-up(lg) {
+          color: $color-grey;
+          background-color: $color-secondary;
+
+          &.active {
+            color: $color-grey;
+            background-color: $color-grey;
+          }
+
+        }
+
+      }
+
+    }
+
+    &__item:last-child {
+
+      .answers-nav__link {
+        border-bottom: 0;
+        border-right: 0;
+      }
+
+    }
+
+  }
+
+  .answer-tabs {
+
+    .answer {
+      //display: block;
+      position: relative;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      &__title {
+        //margin-bottom: 3rem;
+      }
+
+      &__product {
+        background-color: $color-secondary;
+        color: $color-grey;
+        padding: 3.5rem 3rem 3rem;
+        margin-top: 6rem;
+
+        @include media-breakpoint-up(md) {
+          padding: 4rem 4rem 3.5rem;
+          margin-top: 7rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+          font-weight: $weight-extrabold;
+          color: $color-grey;
+
+          @include media-breakpoint-up(sm) {
+            font-size: 2.8rem;
+          }
+
+          @include media-breakpoint-up(lg) {
+            font-size: 3.5rem;
+          }
+
+          &::before {
+            display: block;
+            content: '';
+            width: 3rem;
+            height: 0.3rem;
+            background-color: $color-grey;
+            margin-bottom: 2.5rem;
+            margin-left: 0.1rem;
+          }
+
+        }
+
+        .btn-default {
+
+          @include hover-focus {
+            color: $color-grey;
+            background-color: $color-grey;
+            border-color: $color-grey;
+
+            &::after {
+              color: $color-secondary;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+}

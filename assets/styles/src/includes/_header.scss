@@ -1,0 +1,94 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* HEADER  */
+/*-----------------------------------------------------------------------------------*/
+
+.header {
+
+  &--front {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: $color-delta;
+    z-index: $z-index-fixed;
+    -webkit-transition: top 0.8s ease, background-color 0.5s ease;
+    -moz-transition: top 0.8s ease, background-color 0.5s ease;
+    -o-transition: top 0.8s ease, background-color 0.5s ease;
+    transition: top 0.8s ease, background-color 0.5s ease;
+
+    @include media-breakpoint-up(sm) {
+      background: transparent;
+    }
+
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &--up {
+      top: -12rem; // same as header height + shadow
+    }
+  
+    &--solid {
+      background-color: $color-delta;
+      @include box-shadow (0 0 1rem 0.5rem rgba($color-black,0.22));
+    }
+
+  }
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* LOGO */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin logo-size {
+  width: 14.0rem;
+  height: 1.8rem;
+
+  @include media-breakpoint-up(md) {
+    width: 15.0rem;
+    height: 2.3rem;
+  }
+
+}
+
+.header {
+
+  .logo {
+    display: inline-block;
+    opacity: 1;
+    line-height: 1;
+    padding: 0.5rem 0;
+    position: relative;
+    background: $color-grey;
+    @include transition-base;
+
+    @include media-breakpoint-up(sm) {
+      padding: 1.7rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 1.6rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding: 1.4rem;
+    }
+
+    &__img {
+      @include logo-size;
+      display: inline-block;
+      opacity: 1;
+      @include transition-base;
+
+      @include hover-focus {
+        opacity: 0.8;
+      }
+
+    }
+
+  }
+
+}

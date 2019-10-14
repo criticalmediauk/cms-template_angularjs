@@ -1,0 +1,85 @@
+.carousel {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  color: $color-grey;
+  background: $color-primary;
+
+  .slide {
+    min-height: 60rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include background-size (cover);
+
+    @include media-breakpoint-up(md) {
+      min-height: 80rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      background-attachment: fixed !important;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: $color-primary;
+      background: -o-linear-gradient(0deg, rgba($color-secondary, 0.9) 0%, rgba($color-primary, 0.9) 100%);
+      background: linear-gradient(0deg, rgba($color-secondary, 0.9) 0%, rgba($color-primary, 0.9) 100%);
+    }
+
+  }
+
+  &__strapline {
+    min-height: 40rem;
+
+    @include media-breakpoint-up(md) {
+      min-height: 60rem;
+    }
+    
+  }
+
+  &__title {
+    color: $color-white;
+    font-size: 3.1rem;
+    text-transform: uppercase;
+    font-weight: $weight-bold;
+    text-shadow: 0.3rem 0.3rem 0.4rem rgba($color-black,0.3), 0 0.2rem 0.3rem rgba($color-black,0.3);
+
+    @include media-breakpoint-up(md) {
+      font-size: 5.2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 5.8rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 7rem;
+    }
+
+  }
+
+  &__subtitle {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: $weight-regular;
+    color: $color-white;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.5rem;
+    }
+
+  }
+
+}

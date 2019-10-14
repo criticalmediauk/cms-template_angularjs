@@ -1,0 +1,106 @@
+
+.profile {
+  display: block;
+  background-color: $color-grey;
+  height: 100%;
+  @include transition($transition-base-lg);
+
+  &__media {
+    height: 25rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+      height: 25rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 30rem;
+    }
+
+  }
+
+  &__img {
+    height: 100%;
+    background-color: $color-white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include transition(all 0.8s ease-in-out);
+  }
+
+  &__body {
+    padding: 3rem !important;
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 1.4;
+    @include transition($transition-base-lg);
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  &__job {
+    font-size: 1.6rem;
+    color: $color-grey;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.6rem;
+    }
+
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: $weight-regular;
+    color: $color-secondary-dark;
+    @include transition($transition-base-lg);
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.7rem;
+    }
+
+  }
+
+  &__email {
+    display: block;
+
+    a {
+      font-size: 1.5rem;
+      color: $color-primary;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.7rem;
+      }
+
+    }
+
+  }
+
+  &__phone {
+    display: block;
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.7rem;
+    }
+
+  }
+
+  @include hover-focus {
+
+    .profile {
+
+      &__img {
+        @include transform (scale(1.1));
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,241 @@
+
+.module-timeline {
+
+  .timeline {
+    padding-top: 3rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 4.5rem;
+    }
+
+    .slick-list {
+      //overflow: visible;
+    }
+
+    .slide {
+      height: auto;
+      position: relative;
+      opacity: 0.5;
+      padding: 0 1.5rem;
+
+      @include media-breakpoint-up(md) {
+        padding: 0 4rem;
+      }
+
+      &.slick-active {
+        opacity: 1;
+      }
+
+    } 
+
+    .event {
+      width: 100%;
+
+      &__title {
+        font-weight: bold;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-top: 0;
+        color: $color-primary;
+        font-weight: $weight-extrabold;
+
+        @include media-breakpoint-up(md) {
+          font-size: 3.4rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          font-size: 4rem;
+        }
+
+      }
+
+      &__date {
+        color: $color-secondary;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+
+        @include media-breakpoint-up(sm) {
+          font-size: 2rem;
+        }
+
+      }
+
+      &__text {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: $color-grey;
+        
+        @include media-breakpoint-up(md) {
+          font-size: 1.8rem;
+        }
+
+      }
+
+    }
+  
+  } 
+
+  .timeline-nav {
+    padding-bottom: 1rem;
+
+    .slick-dots {
+      padding-left: 0;
+      list-style: none;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 1.8rem;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -1.9rem;
+          left: 50%;
+          @include transform (translateX(-50%));
+          background: $color-white;
+          border: 0.3rem solid $color-grey;
+          @include border-radius (50%);
+          width: 1.5rem;
+          height: 1.5rem;
+          z-index: 1;
+          @include transition (all .4s ease-in-out);
+        }
+
+        @include hover {
+          cursor: pointer;
+
+          &::after {
+            background: $color-secondary;
+            border-color: $color-secondary;
+          }
+
+        }
+
+        &.slick-active {
+          color: $color-secondary;
+
+          &::after {
+            background: $color-secondary;
+            border-color: $color-secondary;
+          }
+
+        }
+
+      }
+
+      .slick-active ~ li {
+
+        &::after {
+          background: $color-white;
+          border-color: $color-secondary;
+        }
+
+        @include hover {
+
+          &::after {
+            background: $color-secondary;
+            border-color: $color-secondary;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .timeline-progress {
+    display: block;
+    margin: 0 auto;
+    width: 91%;
+    height: 0.3rem;
+    //border-radius: 10px;
+    overflow: hidden;
+    background-color: $color-secondary;
+    background-image: linear-gradient(to right, $color-grey, $color-grey);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    @include transition (background-size .4s ease-in-out);
+    @include transform (rotate(180deg));
+  }
+
+  .slick-arrow {
+    height: auto;
+    width: 100%;
+    min-width: 11rem;
+    padding: 5px 3rem;
+    background: $color-grey;
+    color: $color-white;
+    font-size: 1.4rem;
+    line-height: 3.5rem;
+    @include border-radius (5rem);
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: $weight-semibold;
+    @include transition (all 0.3s ease);
+
+    @include media-breakpoint-up(md) {
+      height: 3.5rem;
+      padding: 0;
+      width: 3.5rem;
+      min-width: auto;
+      font-size: 1.6rem;
+    }
+
+    i {
+      color: $color-secondary;
+    }
+
+    &.slick-disabled {
+      cursor: not-allowed;
+      background: $color-grey;
+      color: $color-white;
+
+      i {
+        color: $color-white;
+      }
+
+    }
+
+    @include hover {
+      background: $color-secondary;
+      color: $color-grey;
+
+      i {
+        color: $color-grey;
+      }
+
+      &.slick-disabled {
+        background: $color-grey;
+        color: $color-white;
+
+        i {
+          color: $color-white;
+        }
+
+      }
+
+    }
+
+  }
+
+}

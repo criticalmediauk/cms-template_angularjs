@@ -1,0 +1,910 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* TEXT - USED FROM BOOTSTRAP > UTILITIES > TEXT.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+/* --------------------- TEXT ALIGN --------------------- */
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .text#{$infix}-left   { text-align: left !important; }
+    .text#{$infix}-right  { text-align: right !important; }
+    .text#{$infix}-center { text-align: center !important; }
+  }
+
+}
+
+
+/* --------------------- TEXT CASE --------------------- */
+
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+
+/* --------------------- TEXT WEIGHT - CUSTOM --------------------- */
+
+// .text-thin      { font-weight: $weight-thin !important; }
+.text-light     { font-weight: $weight-light !important; }
+.text-regular   { font-weight: $weight-regular !important; }
+.text-semibold  { font-weight: $weight-semibold !important; }
+.text-bold      { font-weight: $weight-bold !important; }
+// .text-extrabold { font-weight: $weight-extrabold !important; }
+.text-italic    { font-style: italic !important; }
+
+
+/* --------------------- Line Height --------------------- */
+
+.line-height-0 { line-height: 0 !important; }
+.line-height-1 { line-height: 1 !important; }
+
+
+/* --------------------- TEXT DECORATION --------------------- */
+
+.text-underline  { text-decoration: underline !important; }
+.text-line-through  { text-decoration: line-through !important; }
+
+
+/* --------------------- TEXT COLOURS --------------------- */
+
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      color: darken($color, 10%) !important;
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* POSITION */
+/*-----------------------------------------------------------------------------------*/
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .position#{$infix}-static { position: static !important; }
+    .position#{$infix}-relative { position: relative !important; }
+    .position#{$infix}-absolute { position: absolute !important; }
+    .position#{$infix}-fixed { position: fixed !important; }
+    .position#{$infix}-sticky { position: sticky !important; }
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* DISPLAY - USED FROM BOOTSTRAP > UTILITIES > DISPLAY.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .d#{$infix}-none         { display: none !important; }
+    .d#{$infix}-inline       { display: inline !important; }
+    .d#{$infix}-inline-block { display: inline-block !important; }
+    .d#{$infix}-block        { display: block !important; }
+    .d#{$infix}-table        { display: table !important; }
+    .d#{$infix}-table-row    { display: table-row !important; }
+    .d#{$infix}-table-cell   { display: table-cell !important; }
+    .d#{$infix}-flex         { display: flex !important; }
+    .d#{$infix}-inline-flex  { display: inline-flex !important; }
+
+  }
+}
+
+@media print {
+  .d-print-none         { display: none !important; }
+  .d-print-inline       { display: inline !important; }
+  .d-print-inline-block { display: inline-block !important; }
+  .d-print-block        { display: block !important; }
+  .d-print-table        { display: table !important; }
+  .d-print-table-row    { display: table-row !important; }
+  .d-print-table-cell   { display: table-cell !important; }
+  .d-print-flex         { display: flex !important; }
+  .d-print-inline-flex  { display: inline-flex !important; }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* FLEX - USED FROM BOOTSTRAP > UTILITIES > FLEX.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .flex#{$infix}-row            { flex-direction: row !important; }
+    .flex#{$infix}-column         { flex-direction: column !important; }
+    .flex#{$infix}-row-reverse    { flex-direction: row-reverse !important; }
+    .flex#{$infix}-column-reverse { flex-direction: column-reverse !important; }
+
+    .flex#{$infix}-wrap         { flex-wrap: wrap !important; }
+    .flex#{$infix}-nowrap       { flex-wrap: nowrap !important; }
+    .flex#{$infix}-wrap-reverse { flex-wrap: wrap-reverse !important; }
+    .flex#{$infix}-fill         { flex: 1 1 auto !important; }
+    .flex#{$infix}-grow-0       { flex-grow: 0 !important; }
+    .flex#{$infix}-grow-1       { flex-grow: 1 !important; }
+    .flex#{$infix}-shrink-0     { flex-shrink: 0 !important; }
+    .flex#{$infix}-shrink-1     { flex-shrink: 1 !important; }
+
+    .justify-content#{$infix}-start   { justify-content: flex-start !important; }
+    .justify-content#{$infix}-end     { justify-content: flex-end !important; }
+    .justify-content#{$infix}-center  { justify-content: center !important; }
+    .justify-content#{$infix}-between { justify-content: space-between !important; }
+    .justify-content#{$infix}-around  { justify-content: space-around !important; }
+
+    .align-items#{$infix}-start    { align-items: flex-start !important; }
+    .align-items#{$infix}-end      { align-items: flex-end !important; }
+    .align-items#{$infix}-center   { align-items: center !important; }
+    .align-items#{$infix}-baseline { align-items: baseline !important; }
+    .align-items#{$infix}-stretch  { align-items: stretch !important; }
+
+    .align-content#{$infix}-start   { align-content: flex-start !important; }
+    .align-content#{$infix}-end     { align-content: flex-end !important; }
+    .align-content#{$infix}-center  { align-content: center !important; }
+    .align-content#{$infix}-between { align-content: space-between !important; }
+    .align-content#{$infix}-around  { align-content: space-around !important; }
+    .align-content#{$infix}-stretch { align-content: stretch !important; }
+
+    .align-self#{$infix}-auto     { align-self: auto !important; }
+    .align-self#{$infix}-start    { align-self: flex-start !important; }
+    .align-self#{$infix}-end      { align-self: flex-end !important; }
+    .align-self#{$infix}-center   { align-self: center !important; }
+    .align-self#{$infix}-baseline { align-self: baseline !important; }
+    .align-self#{$infix}-stretch  { align-self: stretch !important; }
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* ALIGN - USED FROM BOOTSTRAP > UTILITIES > ALIGN.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+.align-baseline    { vertical-align: baseline !important; } // Browser default
+.align-top         { vertical-align: top !important; }
+.align-middle      { vertical-align: middle !important; }
+.align-bottom      { vertical-align: bottom !important; }
+.align-text-bottom { vertical-align: text-bottom !important; }
+.align-text-top    { vertical-align: text-top !important; }
+
+
+/* ----- CUSTOM ----- */
+
+.align-vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 200;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SPACING - USED FROM BOOTSTRAP > VARIABLES.SCSS - EXTRA SPACING ADDED TOO LINE 130 */
+/*-----------------------------------------------------------------------------------*/
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+
+        .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        .#{$abbrev}t#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .#{$abbrev}r#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .#{$abbrev}b#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}l#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+
+    .m#{$infix}-auto { margin: auto !important; }
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto !important;
+    }
+
+    .mr#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-right: auto !important;
+    }
+
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto !important;
+    }
+
+    .ml#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-left: auto !important;
+    }
+
+  }
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BORDER */
+/*-----------------------------------------------------------------------------------*/
+
+$border-size: 0.1rem !default;
+$border-sizes: () !default;
+$border-sizes: map-merge(
+  (
+     1: ($border-size),
+     2: ($border-size * 2),
+     3: ($border-size * 3),
+     4: ($border-size * 4),
+     5: ($border-size * 5),
+     6: ($border-size * 6),
+     7: ($border-size * 7),
+     8: ($border-size * 8),
+     9: ($border-size * 9),
+     10: ($border-size * 10),
+     11: ($border-size * 11),
+     12: ($border-size * 12),
+     13: ($border-size * 13),
+     14: ($border-size * 14),
+     15: ($border-size * 15),
+     16: ($border-size * 16),
+     17: ($border-size * 17),
+     18: ($border-size * 18),
+     19: ($border-size * 19),
+     20: ($border-size * 20),
+  ),
+  $border-sizes
+);
+
+@each $prop, $abbrev in (border: b) {
+  @each $size, $length in $border-sizes {
+    @each $color, $value in $colors {
+
+      .#{$abbrev}-#{$size}-#{$color} { 
+        #{$prop}: $length solid $value !important; 
+      }
+      .#{$abbrev}t-#{$size}-#{$color} {
+        #{$prop}-top: $length solid $value !important;
+      }
+      .#{$abbrev}r-#{$size}-#{$color} {
+        #{$prop}-right: $length solid $value !important;
+      }
+      .#{$abbrev}b-#{$size}-#{$color} {
+        #{$prop}-bottom: $length solid $value !important;
+      }
+      .#{$abbrev}l-#{$size}-#{$color} {
+        #{$prop}-left: $length solid $value !important;
+      }
+
+    }
+  }
+}
+
+.bt-0 {
+  border-top: 0 solid transparent !important;
+}
+
+.bb-0 {
+  border-bottom: 0 solid transparent !important;
+}
+
+.rounded {
+  border-radius: $border-radius !important;
+}
+
+.rounded-top {
+  border-top-left-radius: $border-radius !important;
+  border-top-right-radius: $border-radius !important;
+}
+
+.rounded-right {
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-left {
+  border-top-left-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* IMAGE - USED FROM BOOTSTRAP > IMAGES.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  @include img-fluid;
+}
+
+/* ----- CUSTOM ----- */
+
+.img-background {
+  @include background-size (cover);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  img {
+    display: none !important;
+  }
+
+}
+
+
+/* --------------------- FIGURE --------------------- */
+
+.figure {
+  display: inline-block;
+}
+
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.figure-caption {
+  color: $color-grey;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SIZE - USED FROM BOOTSTRAP > UTILITIES > SIZING.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+
+.max-w-100 { max-width: 100% !important; }
+.max-h-100 { max-height: 100% !important; }
+.min-w-100 { min-width: 100% !important; }
+.min-h-100 { min-height: 100% !important; }
+.vh-100 { min-height: 100vh !important; overflow: auto !important; }
+.vw-100 { min-width: 100vw !important; overflow: auto !important; }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* FLOAT - USED FROM BOOTSTRAP > UTILITIES > FLOAT.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin float-left {
+  float: left !important;
+}
+@mixin float-right {
+  float: right !important;
+}
+@mixin float-none {
+  float: none !important;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .float#{$infix}-left  { @include float-left; }
+    .float#{$infix}-right { @include float-right; }
+    .float#{$infix}-none  { @include float-none; }
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* VISIBILITY - USED FROM BOOTSTRAP > UTILITIES > VISIBILITY.SCSS */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin invisible($visibility) {
+  visibility: $visibility !important;
+}
+
+.visible {
+  @include invisible(visible);
+}
+
+.invisible {
+  @include invisible(hidden);
+}
+
+/* ----- CUSTOM ----- */
+
+.disabled {
+  cursor: not-allowed;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .overflow#{$infix}-visible  { overflow: visible !important; }
+    .overflow#{$infix}-hidden   { overflow: hidden !important; }
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* TRANSITIONS */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin transition-base {
+  @include transition($transition-base-sm);
+  @include media-breakpoint-up(sm) {
+    @include transition($transition-base-lg);
+  }
+}
+
+.transition-base {
+  @include transition-base;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BACKGROUND */
+/*-----------------------------------------------------------------------------------*/
+
+@each $prop, $abbrev in (background-color: bg) {
+  @each $color, $value in $colors {
+
+    .#{$abbrev}-#{$color} { 
+      #{$prop}: $value !important; 
+    }
+
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BADGES */
+/*-----------------------------------------------------------------------------------*/
+
+.badge {
+  display: inline-block;
+  padding: $badge-padding;
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius($badge-border-radius);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
+  @include border-radius($badge-pill-border-radius);
+}
+
+@each $color, $value in $colors {
+  .badge-#{$color} {
+    color: #ffffff;
+    background-color: $value;
+  }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SHADOWS */
+/*-----------------------------------------------------------------------------------*/
+
+// https://tobiasahlin.com/blog/layered-smooth-box-shadows/
+
+@mixin shadow-1 {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+              0 2px 4px rgba(0,0,0,0.07), 
+              0 4px 8px rgba(0,0,0,0.07), 
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07), 
+              0 32px 64px rgba(0,0,0,0.07);
+}
+
+@mixin shadow-2 {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+              0 2px 4px rgba(0,0,0,0.07), 
+              0 4px 8px rgba(0,0,0,0.07), 
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07), 
+              0 32px 64px rgba(0,0,0,0.07);
+}
+
+@mixin shadow-3 {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+}
+
+@mixin shadow-4 {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
+
+@mixin shadow-5 {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+}
+
+.shadow {
+
+  &-1 {
+    @include shadow-1;
+  }
+
+  &-2 {
+    @include shadow-2;
+  }
+
+  &-3 {
+    @include shadow-3;
+  }
+
+  &-4 {
+    @include shadow-4;
+  }
+
+  &-5 {
+    @include shadow-5;
+  }
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SROLLBARS */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin no-scrollbars {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.no-scrollbars {
+  @include no-scrollbars;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BODY ANIMATION */
+/*-----------------------------------------------------------------------------------*/
+
+// body {
+//   @include animation (fadeIn 1.5s ease);
+// }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SEPARATOR */
+/*-----------------------------------------------------------------------------------*/
+
+// $separator-size: 0.5rem;
+// $separator-border-style: solid;
+// $separator-border-color: $color-secondary;
+
+// .separator {
+//   border: 0;
+// }
+
+// .separator--line {
+//   border: 0;
+//   border-bottom: $separator-size $separator-border-style;
+//   width: 0;
+// }
+
+// @mixin dot {
+//   $dot-size: 0.6rem;
+//   content: "";
+//   display: block;
+//   height: $dot-size;
+//   width: $dot-size;
+//   border-radius: 50%;
+// }
+
+// .separator--dots {
+//   overflow: visible;
+//   border: 0;
+//   @include dot();
+//   position: relative;
+
+//   &:before {
+//     @include dot();
+//     position: absolute;
+//     left: -2.3rem;
+//   }
+
+//   &:after {
+//     @include dot();
+//     position: absolute;
+//     left: 2.3rem;
+//   }
+
+// }
+
+// @mixin dash {
+//   content: "";
+//   display: block;
+//   height: 0.2rem;
+//   width: 2rem;
+// }
+
+// .separator--dash {
+//   @include dash();
+//   overflow: visible;
+//   border: 0;
+//   position: relative;
+
+//   &:before {
+//     @include dash();
+//     position: absolute;
+//     left: -2.7rem;
+//   }
+
+//   &:after {
+//     @include dash();
+//     position: absolute;
+//     left: 2.7rem;
+//   }
+
+// }
+
+// .separator--primary {
+
+//   &.separator--line {
+//     border-color: $color-primary;
+//   }
+
+//   &.separator--dots {
+//     background: $color-primary;
+
+//     &:before {
+//       background: $color-primary;
+//     }
+  
+//     &:after {
+//       background: $color-primary;
+//     }
+
+//   }
+
+//   &.separator--dash {
+//     background: $color-primary;
+
+//     &:before {
+//       background: $color-primary;
+//     }
+  
+//     &:after {
+//       background: $color-primary;
+//     }
+
+//   }
+
+// }
+
+// .separator--secondary {
+
+//   &.separator--line {
+//     border-color: $color-secondary;
+//   }
+
+//   &.separator--dots {
+//     background: $color-secondary;
+
+//     &:before {
+//       background: $color-secondary;
+//     }
+  
+//     &:after {
+//       background: $color-secondary;
+//     }
+
+//   }
+
+//   &.separator--dash {
+//     background: $color-secondary;
+
+//     &:before {
+//       background: $color-secondary;
+//     }
+  
+//     &:after {
+//       background: $color-secondary;
+//     }
+
+//   }
+
+// }
+
+// .separator--gamma {
+
+//   &.separator--line {
+//     border-color: $color-gamma;
+//   }
+
+//   &.separator--dots {
+//     background: $color-gamma;
+
+//     &:before {
+//       background: $color-gamma;
+//     }
+  
+//     &:after {
+//       background: $color-gamma;
+//     }
+
+//   }
+
+//   &.separator--dash {
+//     background: $color-gamma;
+
+//     &:before {
+//       background: $color-gamma;
+//     }
+  
+//     &:after {
+//       background: $color-gamma;
+//     }
+
+//   }
+
+// }
+
+// .separator--delta {
+
+//   &.separator--line {
+//     border-color: $color-delta;
+//   }
+
+//   &.separator--dots {
+//     background: $color-delta;
+
+//     &:before {
+//       background: $color-delta;
+//     }
+  
+//     &:after {
+//       background: $color-delta;
+//     }
+
+//   }
+
+//   &.separator--dash {
+//     background: $color-delta;
+
+//     &:before {
+//       background: $color-delta;
+//     }
+  
+//     &:after {
+//       background: $color-delta;
+//     }
+
+//   }
+
+// }
+
+// .separator--multi {
+
+//   &.separator--dots {
+//     background: $color-secondary;
+
+//     &:before {
+//       background: $color-primary;
+//     }
+  
+//     &:after {
+//       background: $color-gamma;
+//     }
+
+//   }
+
+//   &.separator--dash {
+//     background: $color-secondary;
+
+//     &:before {
+//       background: $color-primary;
+//     }
+  
+//     &:after {
+//       background: $color-gamma;
+//     }
+
+//   }
+
+// }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* ICON */
+/*-----------------------------------------------------------------------------------*/
+
+// @mixin icon {
+//   display: inline-block;
+//   height: 4.5rem;
+//   width: 4.5rem;
+//   line-height: 4.2rem;
+//   font-size: 2.2rem;
+//   text-indent: 0.1rem;
+//   border-width: 0.2rem;
+//   border-style: solid;
+//   @include border-radius (50%); 
+// }
+
+// .icon {
+//   @include icon;
+
+//   &--lg {
+//     height: 6.5rem;
+//     width: 6.5rem;
+//     line-height: 5.5rem;
+//     font-size: 3rem;
+//   }
+
+//   &--primary {
+//     color: $color-primary;
+//     background: lighten($color-primary, 40%);
+//     border-color: $color-primary;
+//   }
+
+// }
