@@ -1,0 +1,538 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* XXXXXXXXX */
+/*-----------------------------------------------------------------------------------*/
+
+/* --------------------- XXXXXXXX --------------------- */
+
+/* ----- xxxxxxx ----- */
+
+/*-----------------------------------------------------------------------------------*/
+/* ASSETS */
+/*-----------------------------------------------------------------------------------*/
+
+$assets-path: "/assets";
+
+// background-image: url('#{$assets-path}/img/xxxxx');
+
+
+/*-----------------------------------------------------------------------------------*/
+/* COLOUR VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+// $color-white:         #fefefe !default;
+// $color-grey-100:      #f8f9fa !default;
+// $color-grey-200:      #e9ecef !default;
+// $color-grey-300:      #dee2e6 !default;
+// $color-grey-400:      #ced4da !default;
+// $color-grey-500:      #8c8c8c !default;
+// $color-grey-600:      #6c757d !default;
+// $color-grey-700:      #495057 !default;
+// $color-grey-800:      #343a40 !default;
+// $color-grey-900:      #212529 !default;
+
+$color-black:         #202020 !default;
+$color-white:         #fefefe !default;
+
+$color-grey-100:      lighten($color-black, 90%) !default;
+$color-grey-200:      lighten($color-black, 80%) !default;
+$color-grey-300:      lighten($color-black, 70%) !default;
+$color-grey-400:      lighten($color-black, 60%) !default;
+$color-grey-500:      lighten($color-black, 50%) !default;
+$color-grey-600:      lighten($color-black, 40%) !default;
+$color-grey-700:      lighten($color-black, 30%) !default;
+$color-grey-800:      lighten($color-black, 20%) !default;
+$color-grey-900:      lighten($color-black, 10%) !default;
+
+$color-grey:          $color-grey-800 !default;
+
+$color-blue:          #007bff !default;
+$color-indigo:        #6610f2 !default;
+$color-purple:        #6f42c1 !default;
+$color-pink:          #e83e8c !default;
+$color-red:           #dc3545 !default;
+$color-orange:        #fd7e14 !default;
+$color-yellow:        #ffc107 !default;
+$color-green:         #28a745 !default;
+$color-teal:          #20c997 !default;
+$color-cyan:          #17a2b8 !default;
+
+// $color-governor:    #3834b5 !default;
+// $color-aquamarine:  #64ffda !default;
+// $color-rose:        #ff1971  !default;
+// $color-zodiac:      #0b1d38 !default;
+$color-fabriah:       #56366b !default;
+
+$color-primary:       $color-fabriah !default;
+$color-secondary:     $color-grey !default;
+// $color-gamma:         $color-rose !default;
+// $color-delta:         $color-zodiac !default;
+$color-success:       $color-green !default;
+$color-info:          $color-blue !default;
+$color-pending:      $color-orange !default;
+$color-warning:       $color-yellow !default;
+$color-danger:        $color-red !default;
+
+$color-facebook:    #3b5998 !default;
+$color-twitter:     #0084b4 !default;
+$color-youtube:     #ff0000 !default;
+$color-google:      #d34836 !default;
+$color-instagram:     $color-black;
+$color-pinterest:   #cb2027 !default;
+$color-linkedin:    #0077b5 !default;
+$color-paypal:      #009cde !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "blue":           $color-blue,
+    "indigo":         $color-indigo,
+    "purple":         $color-purple,
+    "pink":           $color-pink,
+    "red":            $color-red,
+    "orange":         $color-orange,
+    "yellow":         $color-yellow,
+    "green":          $color-green,
+    "teal":           $color-teal,
+    "cyan":           $color-cyan,
+
+    "white":          $color-white,
+    "black":          $color-black,
+    "grey":           $color-grey,
+    "grey-100":       $color-grey-100,
+    "grey-200":       $color-grey-200,
+    "grey-300":       $color-grey-300,
+    "grey-400":       $color-grey-400,
+    "grey-500":       $color-grey-500,
+    "grey-600":       $color-grey-600,
+    "grey-700":       $color-grey-700,
+    "grey-800":       $color-grey-800,
+    "grey-900":       $color-grey-900,
+
+    // "governor":       $color-governor,
+    // "aquamarine":     $color-aquamarine,
+    // "rose":           $color-rose,
+    // "zodiac":         $color-zodiac,
+
+    "primary":        $color-primary,
+    "secondary":      $color-secondary,
+    // "gamma":          $color-gamma,
+    // "delta":          $color-delta,
+    "success":        $color-success,
+    "pending":        $color-pending,
+    "info":           $color-info,
+    "warning":        $color-warning,
+    "danger":         $color-danger
+
+  ),
+  $colors
+);
+
+
+/*-----------------------------------------------------------------------------------*/
+/* FONT VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+/* --------------------- FONT FAMILIES --------------------- */
+
+// $arial: arial, sans-serif;
+// $aileron: 'Aileron', arial, sans-serif;
+// $cabin: 'Cabin', arial, sans-serif;
+$fontawesome: 'FontAwesome', sans-serif;
+// $inter: 'Inter', sans-serif;
+// $hkgrotesk: 'HK Grotesk', arial, sans-serif;
+// $lato: 'Lato', arial, sans-serif;
+// $montserrat: 'Montserrat', arial, sans-serif;
+// $nunitosans: 'Nunito Sans', arial, sans-serif;
+$opensans: 'Open Sans', arial, sans-serif;
+// $overpass: 'Overpass', arial, sans-serif;
+// $poppins: 'Poppins', arial, sans-serif;
+// $questrial: 'Questrial', arial, sans-serif;
+// $raleway: 'Raleway', arial, sans-serif;
+// $sinkinsans: 'Sinkin Sans', arial, sans-serif;
+// $sourcesans: 'Source Sans Pro', arial, sans-serif;
+// $ubuntu: 'Ubuntu', arial, sans-serif;
+// $museo-rounded: 'Museo Sans Rounded', arial, sans-serif;
+// $quicksand: 'Quicksand', arial, sans-serif;
+// $dmsans: 'DM Sans', sans-serif;
+// $vietnam: 'Be Vietnam', sans-serif;
+// $publicsans: 'Public Sans', sans-serif;
+// $franklin: 'Libre Franklin', sans-serif;
+// $asap: 'Asap', sans-serif;
+
+
+/* --------------------- FONT WEIGHTS --------------------- */
+
+// $weight-thin:       100 !default;
+$weight-light:      300 !default;
+$weight-regular:    400 !default;
+$weight-medium:     500 !default;
+$weight-semibold:   600 !default;
+$weight-bold:       700 !default;
+// $weight-heavy:      800 !default;
+// $weight-extrabold:  900 !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SPACING VARIABLES - FROM BOOTSTRAP V4 */
+/*-----------------------------------------------------------------------------------*/
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0:  0,
+    1:  ($spacer * .25),
+    2:  ($spacer * .5),
+    3:  $spacer,
+    4:  ($spacer * 1.5),
+    5:  ($spacer * 2),
+    6:  ($spacer * 2.5),
+    7:  ($spacer * 3),
+    8:  ($spacer * 3.5),
+    9:  ($spacer * 4),
+    10: ($spacer * 4.5),
+    11: ($spacer * 5),
+    12: ($spacer * 5.5),
+    13: ($spacer * 6),
+    14: ($spacer * 6.5),
+    15: ($spacer * 7),
+    16: ($spacer * 7.5),
+    17: ($spacer * 8),
+    18: ($spacer * 8.5),
+    19: ($spacer * 9),
+    20: ($spacer * 9.5),
+    21: ($spacer * 10),
+    22: ($spacer * 10.5),
+    23: ($spacer * 11),
+    24: ($spacer * 11.5),
+    25: ($spacer * 12),
+    26: ($spacer * 12.5),
+    27: ($spacer * 13),
+    28: ($spacer * 13.5),
+    29: ($spacer * 14),
+    30: ($spacer * 14.5),
+    31: ($spacer * 15),
+    32: ($spacer * 15.5),
+    33: ($spacer * 16),
+    34: ($spacer * 16.5),
+    35: ($spacer * 17),
+    36: ($spacer * 17.5),
+    37: ($spacer * 18),
+    38: ($spacer * 18.5),
+    39: ($spacer * 19),
+    40: ($spacer * 19.5),
+    41: ($spacer * 20)
+  ),
+  $spacers
+);
+
+$sizes: () !default;
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+
+
+/*-----------------------------------------------------------------------------------*/
+/* GRID VARIABLES - FROM BOOTSTRAP V4 */
+/*-----------------------------------------------------------------------------------*/
+
+$enable-grid-classes: true !default;
+
+
+/* --------------------- GRID BREAKPOINTS --------------------- */
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+/* --------------------- GRID CONTAINERS --------------------- */
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1300px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+/* --------------------- GRID COLUMNS --------------------- */
+
+$grid-columns:        12 !default;
+$grid-gutter-width:   30px !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* TRANSITION VARIABLES - FROM BOOTSTRAP V4 */
+/*-----------------------------------------------------------------------------------*/
+
+$enable-transitions:      true !default;
+
+$transition-base-lg:      all 0.3s ease-in-out !default;
+$transition-base-sm:      all 0.1s ease-in-out !default;
+$transition-fade:         opacity 0.15s linear !default;
+$transition-collapse:     height 0.35s ease !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* SELECTION VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+::selection {
+  @include selection;
+}
+
+::-moz-selection {
+  @include selection;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BODY VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$body-font:               $opensans !default;
+$body-font-size:          1.4rem !default;
+$body-font-size-lg:       ($body-font-size * 1.1875) !default; //1.7rem = 1.0625, 1.8rem = 1.125, 1.9rem = 1.1875, 2rem = 1.25
+$body-font-size-sm:       1.3rem !default; //($body-font-size * .9359) !default;  //1.4rem
+$body-weight:             $weight-medium !default;
+$body-line-height:        1.5 !default;
+$body-color:              $color-black !default;
+$body-background:         $color-white !default;
+$body-view-background:    $color-white !default;
+$body-small:              80%;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* PARAGRAPH VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$paragraph-margin-top-lg:     2rem !default;
+$paragraph-margin-bottom-lg:  2rem !default;
+$paragraph-margin-top-sm:     1.5rem !default;
+$paragraph-margin-bottom-sm:  1.5rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* LINK VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$link-color:              $color-primary !default;
+$link-decoration:         underline !default;
+$link-weight:             $weight-medium !default;
+$link-hover-color:        darken($link-color, 15%) !default;
+$link-hover-decoration:   underline !default;
+$link-focus-outline:      0.1rem dotted $color-grey !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* HEADING VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$h1-font-size:               $body-font-size * 2.5 !default;
+$h2-font-size:               $body-font-size * 2 !default;
+$h3-font-size:               $body-font-size * 1.75 !default;
+$h4-font-size:               $body-font-size * 1.5 !default;
+$h5-font-size:               $body-font-size * 1.25 !default;
+$h6-font-size:               $body-font-size !default;
+
+$headings-margin-top-lg:     $paragraph-margin-top-lg !default;
+$headings-margin-top-sm:     $paragraph-margin-bottom-lg !default;
+$headings-margin-bottom-lg:  1rem !default;
+$headings-margin-bottom-sm:  0.5rem !default;
+$headings-font-family:       inherit !default;
+$headings-font-weight:       $weight-medium !default;
+$headings-line-height:       1.4 !default;
+$headings-color:             inherit !default;
+$headings-letter-spacing:    0 !default;
+$headings-word-spacing:      0 !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* DISPLAY VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$display-1-font-family:      $body-font !default;
+$display-2-font-family:      $body-font !default;
+$display-3-font-family:      $body-font !default;
+$display-4-font-family:      $body-font !default;
+$display-5-font-family:      $body-font !default;
+
+$display-1-size:             3.5rem !default;
+$display-2-size:             3rem !default;
+$display-3-size:             2.5rem !default;
+$display-4-size:             2rem !default;
+$display-5-size:             1.7rem !default;
+
+$display-1-weight:           $headings-font-weight !default;
+$display-2-weight:           $headings-font-weight !default;
+$display-3-weight:           $headings-font-weight !default;
+$display-4-weight:           $headings-font-weight !default;
+$display-5-weight:           $headings-font-weight !default;
+
+$display-1-color:            $body-color !default;
+$display-2-color:            $body-color !default;
+$display-3-color:            $body-color !default;
+$display-4-color:            $body-color !default;
+$display-5-color:            $body-color !default;
+
+$display-1-letter-spacing:   $headings-letter-spacing !default;
+$display-2-letter-spacing:   $headings-letter-spacing !default;
+$display-3-letter-spacing:   $headings-letter-spacing !default;
+$display-4-letter-spacing:   $headings-letter-spacing !default;
+$display-5-letter-spacing:   $headings-letter-spacing !default;
+
+$display-1-word-spacing:     $headings-word-spacing !default;
+$display-2-word-spacing:     $headings-word-spacing !default;
+$display-3-word-spacing:     $headings-word-spacing !default;
+$display-4-word-spacing:     $headings-word-spacing !default;
+$display-5-word-spacing:     $headings-word-spacing !default;
+
+$display-line-height:        $headings-line-height !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* NAVIGATION VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$navigation-font-family:  $body-font !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* IMAGE VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$image-margin-top-lg:     4rem !default;
+$image-margin-top-sm:     3.5rem !default;
+$image-margin-bottom-lg:  5.5rem !default;
+$image-margin-bottom-sm:  4rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BLOCKQUOTE VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$blockquote-margin-top-lg:     3rem !default;
+$blockquote-margin-top-sm:     3rem !default;
+$blockquote-margin-bottom-lg:  3rem !default;
+$blockquote-margin-bottom-sm:  3rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BORDER VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$border-color:  $color-black;
+$border-width:  0.1rem;
+$border-radius: 0.3rem;
+$border-style:  solid;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* TABLE VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$table-cell-padding-lg:   1.3rem !default;
+$table-cell-padding-sm:   1rem !default;
+$table-border-color:      $color-grey-300 !default;
+$table-border-width:      $border-width !default;
+$table-align:             left !default;
+$table-vertical-align:    middle !default;
+$table-head-weight:       $weight-semibold !default;
+$table-data-weight:       $weight-regular !default;
+$table-striped-color:     $color-grey-400 !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* CARD VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$card-background-color:   $color-white !default;
+$card-border-color:       $color-grey-300 !default;
+$card-border-radius:      $border-radius !default;
+$card-border-width:       0.1rem !default;
+$card-padding:            1.5rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* FORM VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$form-font:               $body-font !default;
+$form-font-size:          $body-font-size !default;
+$form-font-size-sm:       $body-font-size-sm !default;
+$form-font-weight:        $weight-medium !default;
+$form-font-color:         $color-grey-800 !default;
+$form-placholder-color:   $color-grey-500 !default;
+$form-border-color:       $color-grey-400 !default;
+$form-border-focus-color: $color-grey-500 !default;
+$form-border-width:       $border-width !default;
+$form-border-radius:      $border-radius !default;
+$form-background-color:   $color-white !default;
+$form-padding:            0.8rem 1.4rem !default;
+$form-padding-sm:         $form-padding !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BUTTON VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$button-font:               $body-font !default;
+$button-font-size:          $body-font-size !default;
+$button-font-size-lg:       $button-font-size * 1.1 !default;
+$button-font-size-sm:       $body-font-size-sm !default;
+$button-font-weight:        $weight-semibold !default;
+$button-border-width:       0.1rem !default;
+$button-border-style:       solid !default;
+$button-border-radius:      $border-radius !default;
+$button-padding:            0.8rem 1.4rem !default;
+$button-padding-sm:         0.5rem 1rem !default;
+$button-padding-lg:         1.1rem 1.9rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* BADGE VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$badge-padding: 0.5rem 0.6rem!default;
+$badge-font-size: $body-small !default;
+$badge-font-weight: $weight-bold !default;
+$badge-border-radius: $border-radius !default;
+$badge-pill-padding-x: .8rem !default;
+$badge-pill-border-radius: 10rem !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Z INDEX VARIABLES */
+/*-----------------------------------------------------------------------------------*/
+
+$z-index-dropdown:           1000 !default;
+//$z-index-sticky:           1020 !default;
+$z-index-fixed:              1030 !default;
+$z-index-modal-backdrop:     1040 !default;
+$z-index-modal:              1050 !default;
+//$z-index-tooltip:          1070 !default;

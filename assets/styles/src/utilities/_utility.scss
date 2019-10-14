@@ -1,71 +1,3 @@
-
-/*-----------------------------------------------------------------------------------*/
-/* TEXT - USED FROM BOOTSTRAP > UTILITIES > TEXT.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-/* --------------------- TEXT ALIGN --------------------- */
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    .text#{$infix}-left   { text-align: left !important; }
-    .text#{$infix}-right  { text-align: right !important; }
-    .text#{$infix}-center { text-align: center !important; }
-  }
-
-}
-
-
-/* --------------------- TEXT CASE --------------------- */
-
-.text-lowercase  { text-transform: lowercase !important; }
-.text-uppercase  { text-transform: uppercase !important; }
-.text-capitalize { text-transform: capitalize !important; }
-
-
-/* --------------------- TEXT WEIGHT - CUSTOM --------------------- */
-
-// .text-thin      { font-weight: $weight-thin !important; }
-.text-light     { font-weight: $weight-light !important; }
-.text-regular   { font-weight: $weight-regular !important; }
-.text-semibold  { font-weight: $weight-semibold !important; }
-.text-bold      { font-weight: $weight-bold !important; }
-// .text-extrabold { font-weight: $weight-extrabold !important; }
-.text-italic    { font-style: italic !important; }
-
-
-/* --------------------- Line Height --------------------- */
-
-.line-height-0 { line-height: 0 !important; }
-.line-height-1 { line-height: 1 !important; }
-
-
-/* --------------------- TEXT DECORATION --------------------- */
-
-.text-underline  { text-decoration: underline !important; }
-.text-line-through  { text-decoration: line-through !important; }
-
-
-/* --------------------- TEXT COLOURS --------------------- */
-
-@mixin text-emphasis-variant($parent, $color) {
-  #{$parent} {
-    color: $color !important;
-  }
-  a#{$parent} {
-    @include hover-focus {
-      color: darken($color, 10%) !important;
-    }
-  }
-}
-
-@each $color, $value in $colors {
-  @include text-emphasis-variant(".text-#{$color}", $value);
-}
-
-
 /*-----------------------------------------------------------------------------------*/
 /* POSITION */
 /*-----------------------------------------------------------------------------------*/
@@ -83,103 +15,8 @@
 
 
 /*-----------------------------------------------------------------------------------*/
-/* DISPLAY - USED FROM BOOTSTRAP > UTILITIES > DISPLAY.SCSS */
+/* ALIGN */
 /*-----------------------------------------------------------------------------------*/
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    .d#{$infix}-none         { display: none !important; }
-    .d#{$infix}-inline       { display: inline !important; }
-    .d#{$infix}-inline-block { display: inline-block !important; }
-    .d#{$infix}-block        { display: block !important; }
-    .d#{$infix}-table        { display: table !important; }
-    .d#{$infix}-table-row    { display: table-row !important; }
-    .d#{$infix}-table-cell   { display: table-cell !important; }
-    .d#{$infix}-flex         { display: flex !important; }
-    .d#{$infix}-inline-flex  { display: inline-flex !important; }
-
-  }
-}
-
-@media print {
-  .d-print-none         { display: none !important; }
-  .d-print-inline       { display: inline !important; }
-  .d-print-inline-block { display: inline-block !important; }
-  .d-print-block        { display: block !important; }
-  .d-print-table        { display: table !important; }
-  .d-print-table-row    { display: table-row !important; }
-  .d-print-table-cell   { display: table-cell !important; }
-  .d-print-flex         { display: flex !important; }
-  .d-print-inline-flex  { display: inline-flex !important; }
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* FLEX - USED FROM BOOTSTRAP > UTILITIES > FLEX.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    .flex#{$infix}-row            { flex-direction: row !important; }
-    .flex#{$infix}-column         { flex-direction: column !important; }
-    .flex#{$infix}-row-reverse    { flex-direction: row-reverse !important; }
-    .flex#{$infix}-column-reverse { flex-direction: column-reverse !important; }
-
-    .flex#{$infix}-wrap         { flex-wrap: wrap !important; }
-    .flex#{$infix}-nowrap       { flex-wrap: nowrap !important; }
-    .flex#{$infix}-wrap-reverse { flex-wrap: wrap-reverse !important; }
-    .flex#{$infix}-fill         { flex: 1 1 auto !important; }
-    .flex#{$infix}-grow-0       { flex-grow: 0 !important; }
-    .flex#{$infix}-grow-1       { flex-grow: 1 !important; }
-    .flex#{$infix}-shrink-0     { flex-shrink: 0 !important; }
-    .flex#{$infix}-shrink-1     { flex-shrink: 1 !important; }
-
-    .justify-content#{$infix}-start   { justify-content: flex-start !important; }
-    .justify-content#{$infix}-end     { justify-content: flex-end !important; }
-    .justify-content#{$infix}-center  { justify-content: center !important; }
-    .justify-content#{$infix}-between { justify-content: space-between !important; }
-    .justify-content#{$infix}-around  { justify-content: space-around !important; }
-
-    .align-items#{$infix}-start    { align-items: flex-start !important; }
-    .align-items#{$infix}-end      { align-items: flex-end !important; }
-    .align-items#{$infix}-center   { align-items: center !important; }
-    .align-items#{$infix}-baseline { align-items: baseline !important; }
-    .align-items#{$infix}-stretch  { align-items: stretch !important; }
-
-    .align-content#{$infix}-start   { align-content: flex-start !important; }
-    .align-content#{$infix}-end     { align-content: flex-end !important; }
-    .align-content#{$infix}-center  { align-content: center !important; }
-    .align-content#{$infix}-between { align-content: space-between !important; }
-    .align-content#{$infix}-around  { align-content: space-around !important; }
-    .align-content#{$infix}-stretch { align-content: stretch !important; }
-
-    .align-self#{$infix}-auto     { align-self: auto !important; }
-    .align-self#{$infix}-start    { align-self: flex-start !important; }
-    .align-self#{$infix}-end      { align-self: flex-end !important; }
-    .align-self#{$infix}-center   { align-self: center !important; }
-    .align-self#{$infix}-baseline { align-self: baseline !important; }
-    .align-self#{$infix}-stretch  { align-self: stretch !important; }
-  }
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* ALIGN - USED FROM BOOTSTRAP > UTILITIES > ALIGN.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-.align-baseline    { vertical-align: baseline !important; } // Browser default
-.align-top         { vertical-align: top !important; }
-.align-middle      { vertical-align: middle !important; }
-.align-bottom      { vertical-align: bottom !important; }
-.align-text-bottom { vertical-align: text-bottom !important; }
-.align-text-top    { vertical-align: text-top !important; }
-
-
-/* ----- CUSTOM ----- */
 
 .align-vertical-center {
   position: absolute;
@@ -187,63 +24,6 @@
   left: 0;
   transform: translateY(-50%);
   z-index: 200;
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* SPACING - USED FROM BOOTSTRAP > VARIABLES.SCSS - EXTRA SPACING ADDED TOO LINE 130 */
-/*-----------------------------------------------------------------------------------*/
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    @each $prop, $abbrev in (margin: m, padding: p) {
-      @each $size, $length in $spacers {
-
-        .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
-        .#{$abbrev}t#{$infix}-#{$size},
-        .#{$abbrev}y#{$infix}-#{$size} {
-          #{$prop}-top: $length !important;
-        }
-        .#{$abbrev}r#{$infix}-#{$size},
-        .#{$abbrev}x#{$infix}-#{$size} {
-          #{$prop}-right: $length !important;
-        }
-        .#{$abbrev}b#{$infix}-#{$size},
-        .#{$abbrev}y#{$infix}-#{$size} {
-          #{$prop}-bottom: $length !important;
-        }
-        .#{$abbrev}l#{$infix}-#{$size},
-        .#{$abbrev}x#{$infix}-#{$size} {
-          #{$prop}-left: $length !important;
-        }
-      }
-    }
-
-    .m#{$infix}-auto { margin: auto !important; }
-    .mt#{$infix}-auto,
-    .my#{$infix}-auto {
-      margin-top: auto !important;
-    }
-
-    .mr#{$infix}-auto,
-    .mx#{$infix}-auto {
-      margin-right: auto !important;
-    }
-
-    .mb#{$infix}-auto,
-    .my#{$infix}-auto {
-      margin-bottom: auto !important;
-    }
-
-    .ml#{$infix}-auto,
-    .mx#{$infix}-auto {
-      margin-left: auto !important;
-    }
-
-  }
-
 }
 
 
@@ -281,7 +61,7 @@ $border-sizes: map-merge(
 
 @each $prop, $abbrev in (border: b) {
   @each $size, $length in $border-sizes {
-    @each $color, $value in $colors {
+    @each $color, $value in $theme-colors {
 
       .#{$abbrev}-#{$size}-#{$color} { 
         #{$prop}: $length solid $value !important; 
@@ -359,16 +139,16 @@ $border-sizes: map-merge(
 
 /* ----- CUSTOM ----- */
 
-.img-background {
-  @include background-size (cover);
-  background-position: center center;
-  background-repeat: no-repeat;
+// .img-background {
+//   @include background-size (cover);
+//   background-position: center center;
+//   background-repeat: no-repeat;
 
-  img {
-    display: none !important;
-  }
+//   img {
+//     display: none !important;
+//   }
 
-}
+// }
 
 
 /* --------------------- FIGURE --------------------- */
@@ -382,52 +162,9 @@ $border-sizes: map-merge(
   line-height: 1;
 }
 
-.figure-caption {
-  color: $color-grey;
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* SIZE - USED FROM BOOTSTRAP > UTILITIES > SIZING.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-@each $prop, $abbrev in (width: w, height: h) {
-  @each $size, $length in $sizes {
-    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
-  }
-}
-
-.max-w-100 { max-width: 100% !important; }
-.max-h-100 { max-height: 100% !important; }
-.min-w-100 { min-width: 100% !important; }
-.min-h-100 { min-height: 100% !important; }
-.vh-100 { min-height: 100vh !important; overflow: auto !important; }
-.vw-100 { min-width: 100vw !important; overflow: auto !important; }
-
-
-/*-----------------------------------------------------------------------------------*/
-/* FLOAT - USED FROM BOOTSTRAP > UTILITIES > FLOAT.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-@mixin float-left {
-  float: left !important;
-}
-@mixin float-right {
-  float: right !important;
-}
-@mixin float-none {
-  float: none !important;
-}
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    .float#{$infix}-left  { @include float-left; }
-    .float#{$infix}-right { @include float-right; }
-    .float#{$infix}-none  { @include float-none; }
-  }
-}
+// .figure-caption {
+//   color: $color-grey;
+// }
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -465,16 +202,16 @@ $border-sizes: map-merge(
 /* TRANSITIONS */
 /*-----------------------------------------------------------------------------------*/
 
-@mixin transition-base {
-  @include transition($transition-base-sm);
-  @include media-breakpoint-up(sm) {
-    @include transition($transition-base-lg);
-  }
-}
+// @mixin transition-base {
+//   @include transition($transition-base-sm);
+//   @include media-breakpoint-up(sm) {
+//     @include transition($transition-base-lg);
+//   }
+// }
 
-.transition-base {
-  @include transition-base;
-}
+// .transition-base {
+//   @include transition-base;
+// }
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -482,7 +219,7 @@ $border-sizes: map-merge(
 /*-----------------------------------------------------------------------------------*/
 
 @each $prop, $abbrev in (background-color: bg) {
-  @each $color, $value in $colors {
+  @each $color, $value in $theme-colors {
 
     .#{$abbrev}-#{$color} { 
       #{$prop}: $value !important; 
@@ -490,46 +227,6 @@ $border-sizes: map-merge(
 
   }
 }
-
-
-/*-----------------------------------------------------------------------------------*/
-/* BADGES */
-/*-----------------------------------------------------------------------------------*/
-
-.badge {
-  display: inline-block;
-  padding: $badge-padding;
-  font-size: $badge-font-size;
-  font-weight: $badge-font-weight;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  @include border-radius($badge-border-radius);
-
-  &:empty {
-    display: none;
-  }
-}
-
-.btn .badge {
-  position: relative;
-  top: -1px;
-}
-
-.badge-pill {
-  padding-right: $badge-pill-padding-x;
-  padding-left: $badge-pill-padding-x;
-  @include border-radius($badge-pill-border-radius);
-}
-
-@each $color, $value in $colors {
-  .badge-#{$color} {
-    color: #ffffff;
-    background-color: $value;
-  }
-}
-
 
 /*-----------------------------------------------------------------------------------*/
 /* SHADOWS */
@@ -623,251 +320,3 @@ $border-sizes: map-merge(
 .no-scrollbars {
   @include no-scrollbars;
 }
-
-$caret-width: 0.5rem;
-
-@mixin caret-down {
-  border-top: $caret-width solid;
-  border-right: $caret-width solid transparent;
-  border-bottom: 0;
-  border-left: $caret-width solid transparent;
-}
-
-@mixin caret-up {
-  border-top: 0;
-  border-right: $caret-width solid transparent;
-  border-bottom: $caret-width solid;
-  border-left: $caret-width solid transparent;
-}
-
-@mixin caret-right {
-  border-top: $caret-width solid transparent;
-  border-right: 0;
-  border-bottom: $caret-width solid transparent;
-  border-left: $caret-width solid;
-}
-
-@mixin caret-left {
-  border-top: $caret-width solid transparent;
-  border-right: $caret-width solid;
-  border-bottom: $caret-width solid transparent;
-}
-
-@mixin caret($direction: down) {
-    &::after {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      margin-left: $caret-width * .85;
-      // vertical-align: $caret-width * .85;
-      vertical-align: middle;
-      content: "";
-      @if $direction == down {
-        @include caret-down;
-      } @else if $direction == up {
-        @include caret-up;
-      } @else if $direction == right {
-        @include caret-right;
-      }
-    }
-
-    @if $direction == left {
-      &::after {
-        display: none;
-      }
-
-      &::before {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-right: $caret-width * .85;
-        vertical-align: $caret-width * .85;
-        content: "";
-        @include caret-left;
-      }
-    }
-
-    &:empty::after {
-      margin-left: 0;
-    }
-  
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* DROPDOWN */
-/*-----------------------------------------------------------------------------------*/
-
-// The dropdown wrapper (`<div>`)
-.dropup,
-.dropright,
-.dropdown,
-.dropleft {
-  position: relative;
-}
-
-.dropdown-toggle {
-  // Generate the caret automatically
-  @include caret;
-}
-
-// The dropdown menu
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: $z-index-dropdown;
-  display: none; // none by default, but block on "open" of the menu
-  float: left;
-  min-width: 10rem;
-  padding: .5rem 0;
-  margin: .125rem 0 0; // override default ul
-  font-size: $body-font-size; // Redeclare because nesting can cause inheritance issues
-  color: $color-black;
-  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
-  list-style: none;
-  background-color: $color-white;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
-  @include border-radius(.25rem);
-  // @include box-shadow($dropdown-box-shadow);
-}
-
-.dropdown-menu-right {
-  right: 0;
-  left: auto;
-}
-
-// Allow for dropdowns to go bottom up (aka, dropup-menu)
-// Just add .dropup after the standard .dropdown class and you're set.
-// .dropup {
-//   .dropdown-menu {
-//     top: auto;
-//     bottom: 100%;
-//     margin-top: 0;
-//     margin-bottom: $dropdown-spacer;
-//   }
-
-//   .dropdown-toggle {
-//     @include caret(up);
-//   }
-// }
-
-// .dropright {
-//   .dropdown-menu {
-//     top: 0;
-//     right: auto;
-//     left: 100%;
-//     margin-top: 0;
-//     margin-left: $dropdown-spacer;
-//   }
-
-//   .dropdown-toggle {
-//     @include caret(right);
-//     &::after {
-//       vertical-align: 0;
-//     }
-//   }
-// }
-
-// .dropleft {
-//   .dropdown-menu {
-//     top: 0;
-//     right: 100%;
-//     left: auto;
-//     margin-top: 0;
-//     margin-right: $dropdown-spacer;
-//   }
-
-//   .dropdown-toggle {
-//     @include caret(left);
-//     &::before {
-//       vertical-align: 0;
-//     }
-//   }
-// }
-
-// When enabled Popper.js, reset basic dropdown position
-// stylelint-disable no-duplicate-selectors
-.dropdown-menu {
-  &[x-placement^="top"],
-  &[x-placement^="right"],
-  &[x-placement^="bottom"],
-  &[x-placement^="left"] {
-    right: auto;
-    bottom: auto;
-  }
-}
-
-.dropdown-divider {
-  height: 0;
-  margin: .5rem 0;
-  overflow: hidden;
-  border-top: 1px solid #e9ecef;
-}
-
-.dropdown-item {
-  display: block;
-  width: 100%;
-  padding: .25rem 1.5rem;
-  clear: both;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  text-decoration: none;
-  background-color: transparent;
-  border: 0;
-
-  @include hover-focus {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #f8f9fa;
-  }
-
-  &.active,
-  &:active {
-    color: #fff;
-    text-decoration: none;
-    background-color: #007bff;
-  }
-
-  &.disabled,
-  &:disabled {
-    color: #6c757d;
-    background-color: transparent;
-  }
-}
-
-.dropdown-menu.show {
-  display: block;
-}
-
-.dropdown.open {
-
-  .dropdown-toggle {
-    @include caret(up);
-  }
-  
-  .dropdown-menu {
-    display: block;
-  }
-
-}
-
-// // Dropdown section headers
-// .dropdown-header {
-//   display: block;
-//   padding: $dropdown-padding-y $dropdown-item-padding-x;
-//   margin-bottom: 0; // for use with heading elements
-//   font-size: $font-size-sm;
-//   color: $dropdown-header-color;
-//   white-space: nowrap; // as with > li > a
-// }
-
-// // Dropdown text
-// .dropdown-item-text {
-//   display: block;
-//   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
-//   color: $dropdown-link-color;
-// }
