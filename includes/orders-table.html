@@ -1,0 +1,105 @@
+<div class="card" ng-controller="ordersTableCtrl">
+
+    <div class="card-header">
+      <div class="row align-items-center">
+
+        <div class="col-auto">
+
+          <select class="form-control" name="bulkSelect" ng-model="data.bulkSelect">
+            <option value="paid">Paid</option>
+            <option value="canceled">Canceled</option>
+            <option value="archive">Archive</option>
+            <option value="delete">Delete</option>
+          </select>
+
+          <!-- <div class="btn-group" uib-dropdown is-open="status.isopen" >
+            <button id="bulkAction" type="button" class="btn btn-secondary" uib-dropdown-toggle >
+              Bulk action <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="bulkAction">
+              <a href="#" class="dropdown-item">Paid</a>
+              <a href="#" class="dropdown-item">Canceled</a>
+              <a href="#" class="dropdown-item">Archive</a>
+              <a href="#" class="dropdown-item">Delete</a>
+            </div>
+          </div> -->
+
+        </div>
+
+        <div class="col">
+          <form class="row align-items-center no-gutters">
+            <div class="input-group">
+              <input type="text" class="form-control" name="search" placeholder="Search">
+              <div class="input-group-append">
+                <button class="btn btn-secondary input-group-append-btn" type="button" id="searchSubmit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-auto text-right">
+          <button class="btn btn-primary" type="button">Add new order</button>
+        </div>
+      </div> 
+    </div>
+
+    <div class="card-body p-0">
+      <div class="table-responsive-md">
+        <table class="table mb-0" >
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>Created</th>
+              <th>Order ID</th>
+              <th>Status</th>
+              <th>Customer</th>
+              <th>Total</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="order in filterData = (orders | filter : {id: filterText}) | limitTo:5:5*(page-1)">
+              <td data-title=""><input type="checkbox" name="bulkSelect" id="bulkSelect" value="true"></td>
+              <td data-title="Created">{{order.date}} {{order.time}}</td>
+              <td data-title="Order Id">{{order.id}}</td>
+              <td data-title="Status">
+                <span ng-show="order.status == 'complete'" class="badge badge-success text-capitalize">{{order.status}}</span>
+                <span ng-show="order.status == 'failed'" class="badge badge-danger text-capitalize">{{order.status}}</span>
+              </td>
+              <td data-title="Customer">{{order.name}}</td>
+              <td data-title="Customer">£{{order.spend}}</td>
+              <td data-title="" class="text-md-right">
+                <button class="btn btn-primary" type="button" ng-click = "newOrderModal()">Manage</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="card-footer">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <ul 
+            uib-pagination 
+            class="pagination m-0" 
+            total-items="filterData.length" 
+            ng-model="page"
+            ng-change="pageChanged()" 
+            previous-text="&lsaquo;" 
+            next-text="&rsaquo;" 
+            items-per-page=5 
+          >
+          </ul>
+        </div>
+        <div class="col-auto text-right">
+          <select class="form-control" name="resultSelect" ng-model="data.resultSelect">
+            <option value="all">All</option>
+            <option selected value="20">20</option>
+            <option value="50">50</option>
+            <option value="80">80</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>

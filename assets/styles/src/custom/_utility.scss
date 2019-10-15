@@ -202,16 +202,19 @@ $border-sizes: map-merge(
 /* TRANSITIONS */
 /*-----------------------------------------------------------------------------------*/
 
-// @mixin transition-base {
-//   @include transition($transition-base-sm);
-//   @include media-breakpoint-up(sm) {
-//     @include transition($transition-base-lg);
-//   }
-// }
+$transition-base-lg:      all 0.3s ease-in-out !default;
+$transition-base-sm:      all 0.1s ease-in-out !default;
 
-// .transition-base {
-//   @include transition-base;
-// }
+@mixin transition-base {
+  @include transition($transition-base-sm);
+  @include media-breakpoint-up(sm) {
+    @include transition($transition-base-lg);
+  }
+}
+
+.transition-base {
+  @include transition-base;
+}
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -319,4 +322,110 @@ $border-sizes: map-merge(
 
 .no-scrollbars {
   @include no-scrollbars;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* UI BOOTSTRAP MODAL OVERRIDES */
+/*-----------------------------------------------------------------------------------*/
+
+.fade.in {
+  opacity: 1;
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+  opacity: 0.5 !important;
+}
+
+.modal-backdrop.fade {
+  opacity: 0.5 !important;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* UI BOOTSTRAP PAGINATION OVERRIDES */
+/*-----------------------------------------------------------------------------------*/
+
+@mixin pagination-page {
+  position: relative;
+  display: block;
+  margin-left: -$pagination-border-width;
+  border: $pagination-border-width solid $pagination-border-color;
+}
+
+@mixin pagination-link {
+  display: block;
+  padding: $pagination-padding-y $pagination-padding-x;
+  line-height: $pagination-line-height;
+  color: $pagination-color;
+  background-color: $pagination-bg;
+
+  &:hover {
+    z-index: 2;
+    color: $pagination-hover-color;
+    text-decoration: none;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+  }
+
+  &:focus {
+    z-index: 2;
+    outline: $pagination-focus-outline;
+    box-shadow: $pagination-focus-box-shadow;
+  }
+
+}
+
+.pagination {
+  
+  .pagination-page {
+    @include pagination-page;
+
+    a {
+      @include pagination-link;
+    }
+  
+    &.active a {
+      z-index: 1;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border-color;
+    }
+  
+    &.disabled a {
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      cursor: auto;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border-color;
+    }
+
+  }
+
+  .pagination-prev {
+    @include pagination-page;
+    @include border-left-radius($border-radius);
+
+    a {
+      @include pagination-link;
+    }
+
+  }
+
+  .pagination-next {
+    @include pagination-page;
+    @include border-right-radius($border-radius);
+
+    a {
+      @include pagination-link;
+    }
+
+  }
+
 }

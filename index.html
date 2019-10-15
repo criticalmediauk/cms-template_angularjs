@@ -27,30 +27,42 @@
 
     <!--[if lte IE 9]> <p class="browserupgrade">You are using an outdated browser. Please <a href="https://browsehappy.com/"> update your browser </a> for more security and a better experience.</p> <![endif]-->
     
-    <div class="wrapper">
-  
-      <header class="header py-4 px-6 bb-1-gray-300 bg-white" role="banner">
+    <div class="wrapper" ng-class="{'active':toggleNav}">
+
+      <header class="header py-4 bg-gray-800" role="banner">
         
         <div class="container-fluid p-0">
 
-          <div class="row align-items-center">
+          <!-- <div class="row align-content-between h-100"> -->
+          <div class="row no-gutters">
 
-            <div class="col line-height-1">
-              <a href="/desktop" class="logo" title="Back to the dashboard">
-                <img class="logo-img" src="./assets/img/fabriah-logo.svg" role="img" alt="" width="300" height="57">
+            <div class="col-12 px-4">
+              <a href="/" class="logo" title="Back to the dashboard">
+                <img class="logo-img" src="./assets/img/fabriah-logo-wo.svg" role="img" alt="Brand logo" width="190" height="36">
               </a>
             </div>
 
-            <nav class="col text-center">
-              <ul class="list-inline">
-                <li ng-class="{ active: currentRoute('/') }"><a href="/" role="button" title="Dashboard">Dashboard</a></li>
-                <li ng-class="{ active: currentRoute('/orders') }"><a href="/orders" role="button" title="Orders">Orders</a></li>
+            <nav class="col-12 mt-8">
+              <ul class="list-group list-group-flush">
+                <li ng-class="{ active: currentRoute('/') }" class="list-group-item">
+                  <a href="/">
+                    Dashboard
+                  </a>
+                </li>
+                <li ng-class="{ active: currentRoute('/orders') }" class="nav-item list-group-item">
+                  <a href="/orders">
+                    <div class="row align-content-center">
+                      <div class="col">Orders</div>
+                      <div class="col text-right"><span class="badge badge-light badge-pill">14</span></div>
+                    </div>
+                  </a>
+                </li>
               </ul>
             </nav>
 
-            <div class="col text-right">
+            <!-- <div class="col-12">
               <a href="/" class="btn btn-secondary">Sign Out</a>
-            </div>
+            </div> -->
 
           </div>
 
@@ -58,7 +70,19 @@
 
       </header>
 
-      <!-- <aside class="aside text-right p-4 bg-grey-300"><a href="/">Sign Out</a></aside> -->
+      <aside class="aside p-4 bg-gray-300">
+        <div class="row align-content-center">
+          <div class="col">
+            <button class="btn btn-link btn-lg text-dark" ng-click="toggleNav = !toggleNav;" name="menu">
+              <i ng-hide="toggleNav" class="fas fa-times"></i>
+              <i ng-show="toggleNav" class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="col text-right">
+            <a href="/login" class="btn btn-dark">Sign Out</a>
+          </div>
+        </div>
+      </aside>
 
       <main class="view p-6">
         <div class="container-fluid p-0">
@@ -68,14 +92,13 @@
 
     </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.7.8/angular-touch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.min.js"></script>
 
     <script src="./assets/scripts/src/app.js"></script>
 
