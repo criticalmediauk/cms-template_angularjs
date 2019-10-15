@@ -1,4 +1,4 @@
-var app = angular.module('app',['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ui.select', 'ngSanitize']);
+var app = angular.module('app',['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ngSanitize']);
 
 /*-----------------------------------------------------------------------------------*/
 /* CONFIGURE ROUTES */
