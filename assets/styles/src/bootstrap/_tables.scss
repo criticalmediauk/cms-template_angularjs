@@ -16,12 +16,14 @@
   }
 
   thead th {
-    vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    vertical-align: middle;
+    text-transform: uppercase;
+    border-top: 0;
+    // border-bottom: (2 * $table-border-width) solid $table-border-color;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    // border-top: (2 * $table-border-width) solid $table-border-color;
   }
 }
 

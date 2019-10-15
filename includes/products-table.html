@@ -1,4 +1,4 @@
-<div class="card" ng-controller="ordersTableCtrl">
+<div class="card" ng-controller="productsTableCtrl">
   <div class="card-header">
     <div class="row align-items-center">
       <div class="col-auto">
@@ -28,7 +28,7 @@
         </form>
       </div>
       <div class="col-auto text-right">
-        <button class="btn btn-primary" type="button">Add new order</button>
+        <button class="btn btn-primary" type="button">Add new product</button>
       </div>
     </div> 
   </div>
@@ -38,25 +38,24 @@
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th ng-click="sortColumn('date')" ng-class="sortClass('date')" class="sort"><span class="sort-icons"></span>Created</th>
-            <th ng-click="sortColumn('id')" ng-class="sortClass('id')" class="sort"><span class="sort-icons"></span>Order ID</th>
-            <th>Status</th>
-            <th>Customer</th>
-            <th>Total</th>
+            <th ng-click="sortColumn('id')" ng-class="sortClass('id')" class="sort"><span class="sort-icons"></span>SKU</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Categories</th>
+            <th>Stock</th>
+            <th>Price</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="order in orders.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))|orderBy:column:reverse">
+          <tr ng-repeat="product in products.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))|orderBy:column:reverse">
             <td data-title=""><input type="checkbox" name="bulkSelect" id="bulkSelect" value="true"></td>
-            <td data-title="Created">{{order.date}} {{order.time}}</td>
-            <td data-title="Order Id">{{order.id}}</td>
-            <td data-title="Status">
-              <span ng-show="order.status == 'complete'" class="badge badge-success text-capitalize">{{order.status}}</span>
-              <span ng-show="order.status == 'failed'" class="badge badge-danger text-capitalize">{{order.status}}</span>
-            </td>
-            <td data-title="Customer">{{order.name}}</td>
-            <td data-title="Customer">£{{order.spend}}</td>
+            <td data-title="SKU">{{product.sku}}</td>
+            <td data-title="Name">{{product.name}}</td>
+            <td data-title="Size">{{product.size}}</td>
+            <td data-title="Categories">{{product.categories}}</td>
+            <td data-title="Stock">{{product.stock}}</td>
+            <td data-title="Price">£{{product.price}}</td>
             <td data-title="" class="text-md-right">
               <button class="btn btn-primary" type="button" ng-click = "newOrderModal()">Manage</button>
             </td>

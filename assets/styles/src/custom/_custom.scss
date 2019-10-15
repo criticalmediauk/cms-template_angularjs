@@ -1,6 +1,8 @@
 /*-----------------------------------------------------------------------------------*/
-/* POSITION */
+/* UTILITIES */
 /*-----------------------------------------------------------------------------------*/
+
+/* --------------------- POSITION --------------------- */
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
@@ -13,10 +15,7 @@
   }
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/* ALIGN */
-/*-----------------------------------------------------------------------------------*/
+/* --------------------- ALIGN --------------------- */
 
 .align-vertical-center {
   position: absolute;
@@ -27,9 +26,7 @@
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* BORDER */
-/*-----------------------------------------------------------------------------------*/
+/* --------------------- BORDER --------------------- */
 
 $border-size: 0.1rem !default;
 $border-sizes: () !default;
@@ -124,66 +121,7 @@ $border-sizes: map-merge(
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* IMAGE - USED FROM BOOTSTRAP > IMAGES.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-@mixin img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-.img-fluid {
-  @include img-fluid;
-}
-
-/* ----- CUSTOM ----- */
-
-// .img-background {
-//   @include background-size (cover);
-//   background-position: center center;
-//   background-repeat: no-repeat;
-
-//   img {
-//     display: none !important;
-//   }
-
-// }
-
-
-/* --------------------- FIGURE --------------------- */
-
-.figure {
-  display: inline-block;
-}
-
-.figure-img {
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
-
-// .figure-caption {
-//   color: $color-grey;
-// }
-
-
-/*-----------------------------------------------------------------------------------*/
-/* VISIBILITY - USED FROM BOOTSTRAP > UTILITIES > VISIBILITY.SCSS */
-/*-----------------------------------------------------------------------------------*/
-
-@mixin invisible($visibility) {
-  visibility: $visibility !important;
-}
-
-.visible {
-  @include invisible(visible);
-}
-
-.invisible {
-  @include invisible(hidden);
-}
-
-/* ----- CUSTOM ----- */
+/* --------------------- VISIBILITY --------------------- */
 
 .disabled {
   cursor: not-allowed;
@@ -198,9 +136,7 @@ $border-sizes: map-merge(
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* TRANSITIONS */
-/*-----------------------------------------------------------------------------------*/
+/* --------------------- TRANSITIONS --------------------- */
 
 $transition-base-lg:      all 0.3s ease-in-out !default;
 $transition-base-sm:      all 0.1s ease-in-out !default;
@@ -217,9 +153,7 @@ $transition-base-sm:      all 0.1s ease-in-out !default;
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* BACKGROUND */
-/*-----------------------------------------------------------------------------------*/
+/* --------------------- BACKGROUND --------------------- */
 
 @each $prop, $abbrev in (background-color: bg) {
   @each $color, $value in $theme-colors {
@@ -231,9 +165,8 @@ $transition-base-sm:      all 0.1s ease-in-out !default;
   }
 }
 
-/*-----------------------------------------------------------------------------------*/
-/* SHADOWS */
-/*-----------------------------------------------------------------------------------*/
+
+/* --------------------- SHADOWS --------------------- */
 
 // https://tobiasahlin.com/blog/layered-smooth-box-shadows/
 
@@ -304,9 +237,7 @@ $transition-base-sm:      all 0.1s ease-in-out !default;
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* SROLLBARS */
-/*-----------------------------------------------------------------------------------*/
+/* --------------------- SROLLBARS --------------------- */
 
 @mixin no-scrollbars {
   -webkit-overflow-scrolling: touch;
@@ -326,104 +257,228 @@ $transition-base-sm:      all 0.1s ease-in-out !default;
 
 
 /*-----------------------------------------------------------------------------------*/
-/* UI BOOTSTRAP MODAL OVERRIDES */
+/* COMPONENTS */
 /*-----------------------------------------------------------------------------------*/
 
-.fade.in {
-  opacity: 1;
-}
+/* --------------------- CHECKBOXES --------------------- */
 
-.modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-.modal-backdrop .fade .in {
-  opacity: 0.5 !important;
-}
-
-.modal-backdrop.fade {
-  opacity: 0.5 !important;
-}
-
-
-/*-----------------------------------------------------------------------------------*/
-/* UI BOOTSTRAP PAGINATION OVERRIDES */
-/*-----------------------------------------------------------------------------------*/
-
-@mixin pagination-page {
+input[type=checkbox] {
   position: relative;
-  display: block;
-  margin-left: -$pagination-border-width;
-  border: $pagination-border-width solid $pagination-border-color;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2.2rem;
+  width: 2.2rem;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 1rem;
+  padding: 0;
+  border: 0;
+  @include border-radius(0);
 }
 
-@mixin pagination-link {
+input[type=checkbox]::after {
+  position: relative;
+  vertical-align: text-bottom;
+  content: "";
   display: block;
-  padding: $pagination-padding-y $pagination-padding-x;
-  line-height: $pagination-line-height;
-  color: $pagination-color;
-  background-color: $pagination-bg;
+  border: 0.1rem solid $input-border-color;
+  background-color: $input-bg;
+  width: 2.2rem;
+  height: 2.2rem;
+  @include border-radius ($border-radius);
+}
 
-  &:hover {
-    z-index: 2;
-    color: $pagination-hover-color;
-    text-decoration: none;
-    background-color: $pagination-hover-bg;
-    border-color: $pagination-hover-border-color;
+input[type=checkbox]::before {
+  position: absolute;
+  top: 0;
+  font-family: $fontawesome;
+  font-weight: 900;
+  content: "\f00c";
+  display: block;
+  font-size: 1.2rem;
+  text-indent: 0.6rem;
+  line-height: 2.4rem;
+  text-align: left;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: transparent;
+  z-index: 1;
+}
+
+input[type=checkbox]:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+input[type=checkbox]:checked::before {
+  color: $black;
+}
+
+
+/* --------------------- RADIOS --------------------- */
+
+input[type=radio] {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  @include appearance (none);
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+input[type=radio]::after {
+  position: relative;
+  vertical-align: text-bottom;
+  margin-right: 1.0rem;
+  content: "";
+  display: block;
+  border: 0.2rem solid $input-border-color;
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 1;
+  @include border-radius (50%);
+}
+
+input[type=radio]::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: transparent;
+  z-index: 1;
+  border: 0.2rem solid transparent;
+  @include border-radius (50%);
+}
+
+input[type=radio]:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+input[type=radio]:checked::after {
+  opacity: 0;
+}
+
+input[type=radio]:checked::before {
+  background-color: $black;
+  border-color: $black;
+}
+
+
+/* ----- RADIO GROUP ----- */
+
+.radio__group {
+  text-align: left;
+  position: relative;
+  margin-bottom: 2rem;
+
+  input {
+    position: absolute;
+    margin: 0;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
-  &:focus {
-    z-index: 2;
-    outline: $pagination-focus-outline;
-    box-shadow: $pagination-focus-box-shadow;
+  label {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 0.2rem solid $input-border-color;
+  }
+
+  input:checked ~ label {
+    color: $black;
+    border-color: $black;
   }
 
 }
 
-.pagination {
+
+/* --------------------- TABLE SORT ARROWS --------------------- */
+
+@mixin th-arrow {
+  position: absolute;
+  left: 0;
+  font-family: $fontawesome;
+  font-weight: 900;
+  display: block;
+  line-height: 0.4rem;
+}
+
+.table {
+
+  thead {
+
+    th {
+
+      &.sort {
+        cursor: pointer;
+
+        .sort-icons {
+          width: 1rem;
+          height: 1.1rem;
+          position: relative;
+          display: inline-block;
+          margin-right: 0.5rem;
+
+          &::before, &::after {
+            @include th-arrow;
+          }
   
-  .pagination-page {
-    @include pagination-page;
+          &::before {
+            top: 0;
+            // content: '\f0de'; //<i class="fas fa-sort-up"></i>
+            content: '\f0d8'; //<i class="fas fa-caret-up"></i>
 
-    a {
-      @include pagination-link;
-    }
+          }
   
-    &.active a {
-      z-index: 1;
-      color: $pagination-active-color;
-      background-color: $pagination-active-bg;
-      border-color: $pagination-active-border-color;
-    }
-  
-    &.disabled a {
-      color: $pagination-disabled-color;
-      pointer-events: none;
-      cursor: auto;
-      background-color: $pagination-disabled-bg;
-      border-color: $pagination-disabled-border-color;
-    }
+          &::after {
+            bottom: 0;
+            // content: '\f0dd'; //<i class="fas fa-sort-down"></i>
+            content: '\f0d7'; //<i class="fas fa-caret-down"></i>
+          }
 
-  }
+        }
 
-  .pagination-prev {
-    @include pagination-page;
-    @include border-left-radius($border-radius);
+        &-desc {
 
-    a {
-      @include pagination-link;
-    }
+          .sort-icons {
+          
+            &::before {
+              color: $blue;
+            }
 
-  }
+          }
 
-  .pagination-next {
-    @include pagination-page;
-    @include border-right-radius($border-radius);
+        }
 
-    a {
-      @include pagination-link;
+        &-asc {
+
+          .sort-icons {
+          
+            &::after {
+              color: $blue;
+            }
+
+          }
+
+        }
+
+      }
+
     }
 
   }

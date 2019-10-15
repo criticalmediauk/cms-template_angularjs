@@ -20,6 +20,10 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/orders.html',
     controller: 'ordersCtrl',
   })
+  .when('/products', {
+    templateUrl: 'views/products.html',
+    controller: 'productsCtrl',
+  })
   .otherwise({
     templateUrl: 'views/404.html',
     controller: '404Ctrl'
@@ -119,8 +123,6 @@ app.controller('ordersTableCtrl', function($scope, $uibModal) {
 
   }
 
-  $scope.page = 1;
-
   $scope.orders = [
     {
       id: '2002',
@@ -131,8 +133,8 @@ app.controller('ordersTableCtrl', function($scope, $uibModal) {
       status: 'failed'
     }, {
       id: '2001',
-      date: '02/03/2017',
-      time: '13:50',
+      date: '01/03/2017',
+      time: '08:20',
       name: 'Joe Bloggs',
       spend: '52.80',
       status: 'complete'
@@ -194,15 +196,55 @@ app.controller('ordersTableCtrl', function($scope, $uibModal) {
       status: 'complete'
     }
 
-  ];                        
+  ];
+  
+  //http://embed.plnkr.co/eheFSh/
+  
+  $scope.viewby = 5;
+  $scope.totalItems = $scope.orders.length;
+  $scope.currentPage = 1;
+  $scope.itemsPerPage = $scope.viewby;
+  $scope.maxSize = 5; //Number of pager buttons to show
 
-	$scope.displayItems = $scope.orders.slice(0, 5);
-	
-	$scope.pageChanged = function() {
-	  var startPos = ($scope.page - 1) * 5;
-	  //$scope.displayItems = $scope.orders.slice(startPos, startPos + 3);
-	  // console.log($scope.page);
-	};
+  $scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+  };
+
+  $scope.setItemsPerPage = function(num) {
+    $scope.itemsPerPage = num;
+    // $scope.currentPage = 1; //reset to first page
+  }
+
+  // column to sort
+ $scope.column = 'id';
+ 
+ // sort ordering (Ascending or Descending). Set true for desending
+ $scope.reverse = true;
+
+ // called on header click
+  $scope.sortColumn = function(col){
+    $scope.column = col;
+    if($scope.reverse){
+      $scope.reverse = false;
+      $scope.reverseclass = 'sort-desc';
+    } else {
+      $scope.reverse = true;
+      $scope.reverseclass = 'sort-asc';
+    }
+  };
+ 
+ // remove and change class
+  $scope.sortClass = function(col){
+    if($scope.column == col ){
+      if($scope.reverse) {
+        return 'sort-asc'; 
+      } else {
+        return 'sort-desc';
+      }
+    } else {
+      return '';
+    }
+  } 
   
 });
 
@@ -217,3 +259,101 @@ app.controller('newOrderCtrl', function ($scope, $uibModalInstance ){
   }
 
 })
+
+
+/*-----------------------------------------------------------------------------------*/
+/* PRODUCTS PAGE CONTROLLER */
+/*-----------------------------------------------------------------------------------*/
+
+app.controller('productsCtrl', function($scope) {
+  $scope.parent.addClass = 'products';
+  $scope.title = 'Products';
+});
+
+
+/*-----------------------------------------------------------------------------------*/
+/* PRODUCTS TABLE CONTROLLER */
+/*-----------------------------------------------------------------------------------*/
+
+app.controller('productsTableCtrl', function($scope, $uibModal) {
+
+  $scope.products = [
+    {
+      sku: '5',
+      name: 'Goldwell Kerasilk Ultra Rich Care Shampoo',
+      price: '7.00',
+      size: '250ml',
+      stock: '5',
+      categories: 'shampoo'
+    }, {
+      sku: '5',
+      name: 'Goldwell Kerasilk Ultra Rich Care Shampoo',
+      price: '7.00',
+      size: '250ml',
+      stock: '5',
+      categories: 'shampoo'
+    }, {
+      sku: '5',
+      name: 'Goldwell Kerasilk Ultra Rich Care Shampoo',
+      price: '7.00',
+      size: '250ml',
+      stock: '5',
+      categories: 'shampoo'
+    }, {
+      sku: '5',
+      name: 'Goldwell Kerasilk Ultra Rich Care Shampoo',
+      price: '7.00',
+      size: '250ml',
+      stock: '5',
+      categories: 'shampoo'
+    }
+
+  ];
+    
+  $scope.viewby = 5;
+  $scope.totalItems = $scope.products.length;
+  $scope.currentPage = 1;
+  $scope.itemsPerPage = $scope.viewby;
+  $scope.maxSize = 5; //Number of pager buttons to show
+
+  $scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+  };
+
+  $scope.setItemsPerPage = function(num) {
+    $scope.itemsPerPage = num;
+    // $scope.currentPage = 1; //reset to first page
+  }
+
+  // column to sort
+ $scope.column = 'id';
+ 
+ // sort ordering (Ascending or Descending). Set true for desending
+ $scope.reverse = true;
+
+ // called on header click
+  $scope.sortColumn = function(col){
+    $scope.column = col;
+    if($scope.reverse){
+      $scope.reverse = false;
+      $scope.reverseclass = 'sort-desc';
+    } else {
+      $scope.reverse = true;
+      $scope.reverseclass = 'sort-asc';
+    }
+  };
+ 
+ // remove and change class
+  $scope.sortClass = function(col){
+    if($scope.column == col ){
+      if($scope.reverse) {
+        return 'sort-asc'; 
+      } else {
+        return 'sort-desc';
+      }
+    } else {
+      return '';
+    }
+  } 
+  
+});
