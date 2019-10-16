@@ -20,6 +20,10 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/orders.html',
     controller: 'ordersCtrl',
   })
+  .when('/new-order', {
+    templateUrl: 'views/new-order.html',
+    controller: 'newOrderCtrl',
+  })
   .when('/products', {
     templateUrl: 'views/products.html',
     controller: 'productsCtrl',
@@ -259,6 +263,16 @@ app.controller('newOrderCtrl', function ($scope, $uibModalInstance ){
   }
 
 })
+
+
+/*-----------------------------------------------------------------------------------*/
+/* ORDERS PAGE CONTROLLER */
+/*-----------------------------------------------------------------------------------*/
+
+app.controller('newOrderCtrl', function($scope) {
+  $scope.parent.addClass = 'new-order';
+  $scope.title = 'Add a new order';
+});
 
 
 /*-----------------------------------------------------------------------------------*/
