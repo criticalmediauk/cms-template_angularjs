@@ -491,21 +491,16 @@ input[type=radio]:checked::before {
 form {
 
   .help-block {
-    position: absolute;
-    bottom: 0;
-    right: 1.5rem;
+    // position: absolute;
+    // bottom: 0;
+    // right: 1.5rem;
     color: $red;
     font-size: 1.2rem;
     display: block;
     //width: 100%;
     text-align: left;
-    opacity: 0;
-    @include transition(opacity 0.3s ease);
-
-    &.has-error {
-      opacity: 1;
-    }
-
+    // opacity: 0;
+    padding: 0.5rem 0;
   }
 
 }
